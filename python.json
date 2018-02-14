@@ -1,0 +1,748 @@
+{
+	// Place your snippets for python here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+
+"bind event":{
+	"prefix": "doc",
+	"body":[
+		"@document['${1:id}'].bind('${2:event}')"
+	],
+	"description": "bind event with function"
+
+
+
+},
+
+
+
+"alert box":{
+	"prefix": "ale",
+	"body": [
+		"alert('${1:str}')"
+	],
+	"description": "alert function"
+
+
+
+
+
+
+},
+
+
+
+"acces id":{
+	"prefix": "do",
+	"body": [
+      "document['${1:id}']"
+
+
+	],
+	"description": "acces id"
+
+
+
+
+},
+
+
+"select": {
+	"prefix": "sel",
+	"body": [
+		"document.select('${1:css selector}')",
+
+
+	],
+	"description": "returns a list with all the elements descending from elt whose CSS selector matches S"
+
+
+},
+
+
+"select_one": {
+	"prefix": "selo",
+	"body": [
+		"document.select_one('${1:css selector}')",
+
+
+	],
+	"description": "returns the elements matching the specified CSS selector, otherwise None"
+
+
+},
+
+
+
+
+"abs_left": {
+	"prefix": "absl",
+	"body": [
+		"abs_left",
+
+
+	],
+	"description": "position of the element relatively to the window left border"
+
+
+},
+
+
+"abs_top": {
+	"prefix": "abst",
+	"body": [
+		"abs_top",
+
+
+	],
+	"description": "position of the element relatively to the window top border"
+
+
+},
+
+"children": {
+	"prefix": "chil",
+	"body": [
+		"children",
+
+
+	],
+	"description": "the element's children in the document tree"
+
+
+},
+
+
+"clear": {
+	"prefix": "cle",
+	"body": [
+		"clear()",
+
+
+	],
+	"description": "removes all the descendants of the element"
+
+
+},
+
+
+
+
+"closest": {
+	"prefix": "clo",
+	"body": [
+		"closest('${1:tag_name'})",
+
+
+	],
+	"description": "removes all the descendants of the element"
+
+
+},
+
+
+
+"height": {
+	"prefix": "hei",
+	"body": [
+		"height",
+
+
+	],
+	"description": "element height in pixels (2)"
+
+
+},
+
+
+
+
+"index": {
+	"prefix": "ind",
+	"body": [
+		"index(['${1:selector}'])",
+
+
+	],
+	"description": "elt.index([selector]) returns the index (an integer) of the element among its parent's children. If selector is specified, only the elements matching the CSS selector are taken into account ; in this case, if no element matches, the method returns -1."
+
+
+},
+
+
+"inside": {
+	"prefix": "ins",
+	"body": [
+		"inside(${1:other})",
+
+
+	],
+	"description": "elt.inside(other) tests if elt is contained inside element other"
+
+
+},
+
+
+"left": {
+	"prefix": "lef",
+	"body": [
+		"left",
+
+
+	],
+	"description": "the position of the element relatively to the left border of the first positioned parent (1)"
+
+
+},
+
+
+"parent": {
+	"prefix": "par",
+	"body": [
+		"parent",
+
+
+	],
+	"description": "the element's parent (None for doc)"
+
+
+},
+
+
+"text": {
+	"prefix": "tex",
+	"body": [
+		"text",
+
+
+	],
+	"description": "the text inside the element"
+
+
+},
+
+
+"top": {
+	"prefix": "to",
+	"body": [
+		"top",
+
+
+	],
+	"description": "the position of the element relatively to the upper border of the first positioned parent (1)"
+
+
+},
+
+
+"width": {
+	"prefix": "wid",
+	"body": [
+		"width",
+
+
+	],
+	"description": "element width in pixels (2)"
+
+
+},
+
+"html": {
+	"prefix": "ht",
+	"body": [
+		"html",
+
+
+	],
+	"description": "the HTML code inside the element"
+
+
+},
+
+
+
+"options": {
+	"prefix": "opt",
+	"body": [
+		"options[${1:index}]",
+
+
+	],
+	"description": "access to an option by its index : option = elt.options[index]"
+
+
+},
+
+
+"options_insert": {
+	"prefix": "optins",
+	"body": [
+		"options.insert(${1:index,$2option})",
+
+
+	],
+	"description": "insertion of an option at the index position : elt.options.insert(index,option)"
+
+
+},
+
+
+"options_append": {
+	"prefix": "optappend",
+	"body": [
+		"options.apppend(${1:option})",
+
+
+	],
+	"description": "insertion of an option at the index position : elt.options.insert(index,option)"
+
+
+},
+
+
+"bind": {
+	"prefix": "bin",
+	"body": [
+		"bind('${1|click,dblclick,mousedown,mousenter,mouseleave,mouseleave,mousemove,mouseover,mouseout,mouseup,keydown,keypress,keyup,abort,beforeunload,error,hashchange,load,pageshow,pagehide,resize,scroll,unload,blur,change,focus,focusin,focusout,input,invalid,reset,search,select,submit,drag,dragend,dragenter,dragleave,dragover,dragstart,drop,copy,cut,paste,afterprint,beforeprint,abort,canplay,message,mousewheel,online,offline,popstate,show,storage,toggle,wheel,touchcancel,touchend,touchmove,touchstart,canplay,canplaythrough,durationchange,emptied,ended,error,loadeddata,loadedmetadata,loadstart,pause,play,playing,progress,ratechange,seeked,seeking,stalled,suspend,timeupdate,volumechange,waiting,animationend,animationiteration,animationstart,transitionend,message,open|}',func)",
+
+
+	],
+	"description": "elt.bind(evt_name[, handler])"
+
+
+},
+
+
+"unbind": {
+	"prefix": "unbin",
+	"body": [
+		"unbind('${1|click,dblclick,mousedown,mousenter,mouseleave,mouseleave,mousemove,mouseover,mouseout,mouseup,keydown,keypress,keyup,abort,beforeunload,error,hashchange,load,pageshow,pagehide,resize,scroll,unload,blur,change,focus,focusin,focusout,input,invalid,reset,search,select,submit,drag,dragend,dragenter,dragleave,dragover,dragstart,drop,copy,cut,paste,afterprint,beforeprint,abort,canplay,message,mousewheel,online,offline,popstate,show,storage,toggle,wheel,touchcancel,touchend,touchmove,touchstart,canplay,canplaythrough,durationchange,emptied,ended,error,loadeddata,loadedmetadata,loadstart,pause,play,playing,progress,ratechange,seeked,seeking,stalled,suspend,timeupdate,volumechange,waiting,animationend,animationiteration,animationstart,transitionend,message,open|}',func)",
+
+
+	],
+	"description": "elt.unbind(evt_name[, handler])"
+
+
+},
+
+
+"events": {
+	"prefix": "events",
+	"body": [
+		"events('${1|click,dblclick,mousedown,mousenter,mouseleave,mouseleave,mousemove,mouseover,mouseout,mouseup,keydown,keypress,keyup,abort,beforeunload,error,hashchange,load,pageshow,pagehide,resize,scroll,unload,blur,change,focus,focusin,focusout,input,invalid,reset,search,select,submit,drag,dragend,dragenter,dragleave,dragover,dragstart,drop,copy,cut,paste,afterprint,beforeprint,abort,canplay,message,mousewheel,online,offline,popstate,show,storage,toggle,wheel,touchcancel,touchend,touchmove,touchstart,canplay,canplaythrough,durationchange,emptied,ended,error,loadeddata,loadedmetadata,loadstart,pause,play,playing,progress,ratechange,seeked,seeking,stalled,suspend,timeupdate,volumechange,waiting,animationend,animationiteration,animationstart,transitionend,message,open|}')",
+
+
+	],
+	"description": "elt.events(evt_name)"
+
+
+},
+
+"bubbles": {
+	"prefix": "bubbles",
+	"body": [
+		"bubbles",
+
+
+	],
+	"description": "boolean, indicates whether the given event bubbles up through the DOM or not"
+
+
+},
+
+
+
+"cancelable": {
+	"prefix": "cancelable",
+	"body": [
+		"cancelable",
+
+
+	],
+	"description": "boolean, indicates whether the event is cancelable or not"
+
+
+},
+
+
+
+"currentTarget": {
+	"prefix": "currentTarget",
+	"body": [
+		"currentTarget",
+
+
+	],
+	"description": "instance of DOMNode ; identifies the current target for the event, as the event traverses the DOM. It always refers to the element the event handler has been attached to as opposed to event.target which identifies the element on which the event occurred."
+
+
+},
+
+
+"defaultPrevented": {
+	"prefix": "defaultPrevented",
+	"body": [
+		"defaultPrevented()",
+
+
+	],
+	"description": "boolean indicating whether or not event.preventDefault() was called on the event"
+
+
+},
+
+
+"eventPhase": {
+	"prefix": "eventPhase",
+	"body": [
+		"eventPhase",
+
+
+	],
+	"description": "integer, indicates which phase of the event flow is currently being evaluated"
+
+
+},
+
+
+"target": {
+	"prefix": "target",
+	"body": [
+		"target",
+
+
+	],
+	"description": "DOMNode instance ; the object the event was dispatched on. It is different than event.currentTarget when the event handler is called in bubbling or capturing phase of the event"
+
+
+},
+
+
+"timeStamp": {
+	"prefix": "timeStamp",
+	"body": [
+		"timeStamp",
+
+
+	],
+	"description": "integer, the time (in milliseconds since Jan. 1st, 1970 at 0h) at which the event was created"
+
+
+},
+
+
+
+"isTrusted": {
+	"prefix": "istrusted",
+	"body": [
+		"isTrusted",
+
+
+	],
+	"description": "isTrusted"
+
+
+},
+
+
+
+"view": {
+	"prefix": "view",
+	"body": [
+		"view",
+
+
+	],
+	"description": "view"
+
+
+},
+
+
+
+"preventDefault": {
+	"prefix": "preventdefault",
+	"body": [
+		"preventDefault()",
+
+
+	],
+	"description": "prevents the execution of the action associated by default to the event"
+
+
+},
+
+
+
+"stopPropagation": {
+	"prefix": "stoppropagation",
+	"body": [
+		"stopPropagation()",
+
+
+	],
+	"description": "prevents further propagation of the current event"
+
+
+},
+
+
+
+
+"stopPropagation": {
+	"prefix": "stoppropagation",
+	"body": [
+		"stopPropagation()",
+
+
+	],
+	"description": "prevents further propagation of the current event"
+
+
+},
+
+
+
+
+"UIEvent": {
+	"prefix": "uievent",
+	"body": [
+		"UIEvent",
+
+
+	],
+	"description": "UIEvent"
+
+
+},
+
+
+
+
+
+"ProgressEvent": {
+	"prefix": "progressevent",
+	"body": [
+		"ProgressEvent",
+
+
+	],
+	"description": "ProgressEvent"
+
+
+},
+
+
+
+
+"AnimationEvent": {
+	"prefix": "animationevent",
+	"body": [
+		"AnimationEvent",
+
+
+	],
+	"description": "AnimationEvent"
+
+
+},
+
+
+
+"BeforeUnloadEvent": {
+	"prefix": "beforeunloadEvent",
+	"body": [
+		"BeforeUnloadEvent",
+
+
+	],
+	"description": "BeforeUnloadEvent"
+
+
+},
+
+
+
+"TimeEvent": {
+	"prefix": "timeEvent",
+	"body": [
+		"TimeEvent",
+
+
+	],
+	"description": "TimeEvent"
+
+
+},
+
+
+
+
+"FocusEvent": {
+	"prefix": "focusevent",
+	"body": [
+		"FocusEvent",
+
+
+	],
+	"description": "FocusEvent"
+
+
+},
+
+
+"SpeechSynthesisEvent": {
+	"prefix": "speechsynthesisevent",
+	"body": [
+		"SpeechSynthesisEvent",
+
+
+	],
+	"description": "SpeechSynthesisEvent"
+
+
+},
+
+
+"MouseEvent": {
+	"prefix": "mouseevent",
+	"body": [
+		"MouseEvent",
+
+
+	],
+	"description": "MouseEvent"
+
+
+},
+
+"Event": {
+	"prefix": "event",
+	"body": [
+		"Event",
+
+
+	],
+	"description": "Event"
+
+
+},
+
+
+"DragEvent": {
+	"prefix": "dragevent",
+	"body": [
+		"DragEvent",
+
+
+	],
+	"description": "DragEvent"
+
+
+},
+
+
+
+"KeyboardEvent": {
+	"prefix": "keyboardevent",
+	"body": [
+		"KeyboardEvent",
+
+
+	],
+	"description": "KeyboardEvent"
+
+
+},
+
+
+
+"MessageEvent": {
+	"prefix": "messageevent",
+	"body": [
+		"MessageEvent",
+
+
+	],
+	"description": "MessageEvent"
+
+
+},
+
+
+
+"PageTransitionEvent": {
+	"prefix": "pagetransitionevent",
+	"body": [
+		"PageTransitionEvent",
+
+
+	],
+	"description": "PageTransitionEvent"
+
+
+},
+
+
+
+
+
+"StorageEvent": {
+	"prefix": "storageevent",
+	"body": [
+		"StorageEvent",
+
+
+	],
+	"description": "StorageEvent"
+
+
+},
+
+
+"dispatchEvent": {
+	"prefix": "dispatchevent",
+	"body": [
+		"dispatchEvent(event)",
+
+
+	],
+	"description": "dispatchEvent"
+
+
+},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
