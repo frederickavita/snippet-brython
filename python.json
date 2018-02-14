@@ -111,7 +111,7 @@
 
 
 "clear": {
-	"prefix": "cle",
+	"prefix": "clear",
 	"body": [
 		"clear()"
 
