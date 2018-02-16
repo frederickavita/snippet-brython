@@ -1,731 +1,5391 @@
 {
 
-"bind event":{
-	"prefix": "doc",
-	"body":[
-		"@document['${1:id}'].bind('${2:event}')"
-	],
-	"description": "bind event with function"
-
-
-
-},
-
-
-
-"alert box":{
-	"prefix": "ale",
-	"body": [
-		"alert('${1:str}')"
-	],
-	"description": "alert function"
-
-
-
-
-
-
-},
-
-
-
-"acces id":{
-	"prefix": "do",
-	"body": [
-      "document['${1:id}']"
-
-
-	],
-	"description": "acces id"
-
-
-
-
-},
-
-
-"select": {
-	"prefix": "sel",
-	"body": [
-		"document.select('${1:css selector}')"
-
-
-	],
-	"description": "returns a list with all the elements descending from elt whose CSS selector matches S"
-
-
-},
-
-
-"select_one": {
-	"prefix": "selo",
-	"body": [
-		"document.select_one('${1:css selector}')"
-
-
-	],
-	"description": "returns the elements matching the specified CSS selector, otherwise None"
-
-
-},
-
-
-
-
-"abs_left": {
-	"prefix": "absl",
-	"body": [
-		"abs_left"
-
-
-	],
-	"description": "position of the element relatively to the window left border"
-
-
-},
-
-
-"abs_top": {
-	"prefix": "abst",
-	"body": [
-		"abs_top"
-
-
-	],
-	"description": "position of the element relatively to the window top border"
-
-
-},
-
-"children": {
-	"prefix": "chil",
-	"body": [
-		"children"
-
-
-	],
-	"description": "the element's children in the document tree"
-
-
-},
-
-
-"clear": {
-	"prefix": "clear",
-	"body": [
-		"clear()"
-
-
-	],
-	"description": "removes all the descendants of the element"
-
-
-},
-
-
-
-
-"closest": {
-	"prefix": "clo",
-	"body": [
-		"closest('${1:tag_name'})",
-
-
-	],
-	"description": "removes all the descendants of the element"
-
-
-},
-
-
-
-"height": {
-	"prefix": "hei",
-	"body": [
-		"height",
-
-
-	],
-	"description": "element height in pixels (2)"
-
-
-},
-
-
-
-
-"index": {
-	"prefix": "ind",
-	"body": [
-		"index(['${1:selector}'])",
-
-
-	],
-	"description": "elt.index([selector]) returns the index (an integer) of the element among its parent's children. If selector is specified, only the elements matching the CSS selector are taken into account ; in this case, if no element matches, the method returns -1."
-
-
-},
-
-
-"inside": {
-	"prefix": "ins",
-	"body": [
-		"inside(${1:other})",
-
-
-	],
-	"description": "elt.inside(other) tests if elt is contained inside element other"
-
-
-},
-
-
-"left": {
-	"prefix": "lef",
-	"body": [
-		"left",
-
-
-	],
-	"description": "the position of the element relatively to the left border of the first positioned parent (1)"
-
-
-},
-
-
-"parent": {
-	"prefix": "par",
-	"body": [
-		"parent",
-
-
-	],
-	"description": "the element's parent (None for doc)"
-
-
-},
-
-
-"text": {
-	"prefix": "tex",
-	"body": [
-		"text",
-
-
-	],
-	"description": "the text inside the element"
-
-
-},
-
-
-"top": {
-	"prefix": "to",
-	"body": [
-		"top",
-
-
-	],
-	"description": "the position of the element relatively to the upper border of the first positioned parent (1)"
-
-
-},
-
-
-"width": {
-	"prefix": "wid",
-	"body": [
-		"width",
-
-
-	],
-	"description": "element width in pixels (2)"
-
-
-},
-
-"html": {
-	"prefix": "ht",
-	"body": [
-		"html",
-
-
-	],
-	"description": "the HTML code inside the element"
-
-
-},
-
-
-
-"options": {
-	"prefix": "opt",
-	"body": [
-		"options[${1:index}]",
-
-
-	],
-	"description": "access to an option by its index : option = elt.options[index]"
-
-
-},
-
-
-"options_insert": {
-	"prefix": "optins",
-	"body": [
-		"options.insert(${1:index,$2option})",
-
-
-	],
-	"description": "insertion of an option at the index position : elt.options.insert(index,option)"
-
-
-},
-
-
-"options_append": {
-	"prefix": "optappend",
-	"body": [
-		"options.apppend(${1:option})",
-
-
-	],
-	"description": "insertion of an option at the index position : elt.options.insert(index,option)"
-
-
-},
-
-
-"bind": {
-	"prefix": "bin",
-	"body": [
-		"bind('${1|click,dblclick,mousedown,mousenter,mouseleave,mouseleave,mousemove,mouseover,mouseout,mouseup,keydown,keypress,keyup,abort,beforeunload,error,hashchange,load,pageshow,pagehide,resize,scroll,unload,blur,change,focus,focusin,focusout,input,invalid,reset,search,select,submit,drag,dragend,dragenter,dragleave,dragover,dragstart,drop,copy,cut,paste,afterprint,beforeprint,abort,canplay,message,mousewheel,online,offline,popstate,show,storage,toggle,wheel,touchcancel,touchend,touchmove,touchstart,canplay,canplaythrough,durationchange,emptied,ended,error,loadeddata,loadedmetadata,loadstart,pause,play,playing,progress,ratechange,seeked,seeking,stalled,suspend,timeupdate,volumechange,waiting,animationend,animationiteration,animationstart,transitionend,message,open|}',func)",
-
-
-	],
-	"description": "elt.bind(evt_name[, handler])"
-
-
-},
-
-
-"unbind": {
-	"prefix": "unbin",
-	"body": [
-		"unbind('${1|click,dblclick,mousedown,mousenter,mouseleave,mouseleave,mousemove,mouseover,mouseout,mouseup,keydown,keypress,keyup,abort,beforeunload,error,hashchange,load,pageshow,pagehide,resize,scroll,unload,blur,change,focus,focusin,focusout,input,invalid,reset,search,select,submit,drag,dragend,dragenter,dragleave,dragover,dragstart,drop,copy,cut,paste,afterprint,beforeprint,abort,canplay,message,mousewheel,online,offline,popstate,show,storage,toggle,wheel,touchcancel,touchend,touchmove,touchstart,canplay,canplaythrough,durationchange,emptied,ended,error,loadeddata,loadedmetadata,loadstart,pause,play,playing,progress,ratechange,seeked,seeking,stalled,suspend,timeupdate,volumechange,waiting,animationend,animationiteration,animationstart,transitionend,message,open|}',func)",
-
-
-	],
-	"description": "elt.unbind(evt_name[, handler])"
-
-
-},
-
-
-"events": {
-	"prefix": "events",
-	"body": [
-		"events('${1|click,dblclick,mousedown,mousenter,mouseleave,mouseleave,mousemove,mouseover,mouseout,mouseup,keydown,keypress,keyup,abort,beforeunload,error,hashchange,load,pageshow,pagehide,resize,scroll,unload,blur,change,focus,focusin,focusout,input,invalid,reset,search,select,submit,drag,dragend,dragenter,dragleave,dragover,dragstart,drop,copy,cut,paste,afterprint,beforeprint,abort,canplay,message,mousewheel,online,offline,popstate,show,storage,toggle,wheel,touchcancel,touchend,touchmove,touchstart,canplay,canplaythrough,durationchange,emptied,ended,error,loadeddata,loadedmetadata,loadstart,pause,play,playing,progress,ratechange,seeked,seeking,stalled,suspend,timeupdate,volumechange,waiting,animationend,animationiteration,animationstart,transitionend,message,open|}')",
-
-
-	],
-	"description": "elt.events(evt_name)"
-
-
-},
-
-"bubbles": {
-	"prefix": "bubbles",
-	"body": [
-		"bubbles",
-
-
-	],
-	"description": "boolean, indicates whether the given event bubbles up through the DOM or not"
-
-
-},
-
-
-
-"cancelable": {
-	"prefix": "cancelable",
-	"body": [
-		"cancelable",
-
-
-	],
-	"description": "boolean, indicates whether the event is cancelable or not"
-
-
-},
-
-
-
-"currentTarget": {
-	"prefix": "currentTarget",
-	"body": [
-		"currentTarget",
-
-
-	],
-	"description": "instance of DOMNode ; identifies the current target for the event, as the event traverses the DOM. It always refers to the element the event handler has been attached to as opposed to event.target which identifies the element on which the event occurred."
-
-
-},
-
-
-"defaultPrevented": {
-	"prefix": "defaultPrevented",
-	"body": [
-		"defaultPrevented()",
-
-
-	],
-	"description": "boolean indicating whether or not event.preventDefault() was called on the event"
-
-
-},
-
-
-"eventPhase": {
-	"prefix": "eventPhase",
-	"body": [
-		"eventPhase",
-
-
-	],
-	"description": "integer, indicates which phase of the event flow is currently being evaluated"
-
-
-},
-
-
-"target": {
-	"prefix": "target",
-	"body": [
-		"target",
-
-
-	],
-	"description": "DOMNode instance ; the object the event was dispatched on. It is different than event.currentTarget when the event handler is called in bubbling or capturing phase of the event"
-
-
-},
-
-
-"timeStamp": {
-	"prefix": "timeStamp",
-	"body": [
-		"timeStamp",
-
-
-	],
-	"description": "integer, the time (in milliseconds since Jan. 1st, 1970 at 0h) at which the event was created"
-
-
-},
-
-
-
-"isTrusted": {
-	"prefix": "istrusted",
-	"body": [
-		"isTrusted",
-
-
-	],
-	"description": "isTrusted"
-
-
-},
-
-
-
-"view": {
-	"prefix": "view",
-	"body": [
-		"view",
-
-
-	],
-	"description": "view"
-
-
-},
-
-
-
-"preventDefault": {
-	"prefix": "preventdefault",
-	"body": [
-		"preventDefault()",
-
-
-	],
-	"description": "prevents the execution of the action associated by default to the event"
-
-
-},
-
-
-
-"stopPropagation": {
-	"prefix": "stoppropagation",
-	"body": [
-		"stopPropagation()",
-
-
-	],
-	"description": "prevents further propagation of the current event"
-
-
-},
-
-
-
-
-"stopPropagation": {
-	"prefix": "stoppropagation",
-	"body": [
-		"stopPropagation()",
-
-
-	],
-	"description": "prevents further propagation of the current event"
-
-
-},
-
-
-
-
-"UIEvent": {
-	"prefix": "uievent",
-	"body": [
-		"UIEvent",
-
-
-	],
-	"description": "UIEvent"
-
-
-},
-
-
-
-
-
-"ProgressEvent": {
-	"prefix": "progressevent",
-	"body": [
-		"ProgressEvent",
-
-
-	],
-	"description": "ProgressEvent"
-
-
-},
-
-
-
-
-"AnimationEvent": {
-	"prefix": "animationevent",
-	"body": [
-		"AnimationEvent",
-
-
-	],
-	"description": "AnimationEvent"
-
-
-},
-
-
-
-"BeforeUnloadEvent": {
-	"prefix": "beforeunloadEvent",
-	"body": [
-		"BeforeUnloadEvent",
-
-
-	],
-	"description": "BeforeUnloadEvent"
-
-
-},
-
-
-
-"TimeEvent": {
-	"prefix": "timeEvent",
-	"body": [
-		"TimeEvent",
-
-
-	],
-	"description": "TimeEvent"
-
-
-},
-
-
-
-
-"FocusEvent": {
-	"prefix": "focusevent",
-	"body": [
-		"FocusEvent",
-
-
-	],
-	"description": "FocusEvent"
-
-
-},
-
-
-"SpeechSynthesisEvent": {
-	"prefix": "speechsynthesisevent",
-	"body": [
-		"SpeechSynthesisEvent"],
-	"description": "SpeechSynthesisEvent"
-
-
-},
-
-
-"MouseEvent": {
-	"prefix": "mouseevent",
-	"body": [
-		"MouseEvent",
-
-
-	],
-	"description": "MouseEvent"
-
-
-},
-
-"Event": {
-	"prefix": "event",
-	"body": [
-		"Event",
-
-
-	],
-	"description": "Event"
-
-
-},
-
-
-"DragEvent": {
-	"prefix": "dragevent",
-	"body": [
-		"DragEvent",
-
-
-	],
-	"description": "DragEvent"
-
-
-},
-
-
-
-"KeyboardEvent": {
-	"prefix": "keyboardevent",
-	"body": [
-		"KeyboardEvent",
-
-
-	],
-	"description": "KeyboardEvent"
-
-
-},
-
-
-
-"MessageEvent": {
-	"prefix": "messageevent",
-	"body": [
-		"MessageEvent",
-
-
-	],
-	"description": "MessageEvent"
-
-
-},
-
-
-
-"PageTransitionEvent": {
-	"prefix": "pagetransitionevent",
-	"body": [
-		"PageTransitionEvent",
-
-
-	],
-	"description": "PageTransitionEvent"
-
-
-},
-
-
-
-
-
-"StorageEvent": {
-	"prefix": "storageevent",
-	"body": [
-		"StorageEvent",
-
-
-	],
-	"description": "StorageEvent"
-
-
-},
-
-
-"dispatchEvent": {
-	"prefix": "dispatchevent",
-	"body": [
-		"dispatchEvent(event)",
-
-
-	],
-	"description": "dispatchEvent"
-
-
-},
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
+	"bind event":{
+		
+		"prefix": "@document",
+		
+		"body":[
+			"@document['id'].bind('${1|click,dblclick,mousedown,mousenter,mouseleave,mouseleave,mousemove,mouseover,mouseout,mouseup,keydown,keypress,keyup,abort,beforeunload,error,hashchange,load,pageshow,pagehide,resize,scroll,unload,blur,change,focus,focusin,focusout,input,invalid,reset,search,select,submit,drag,dragend,dragenter,dragleave,dragover,dragstart,drop,copy,cut,paste,afterprint,beforeprint,abort,canplay,message,mousewheel,online,offline,popstate,show,storage,toggle,wheel,touchcancel,touchend,touchmove,touchstart,canplay,canplaythrough,durationchange,emptied,ended,error,loadeddata,loadedmetadata,loadstart,pause,play,playing,progress,ratechange,seeked,seeking,stalled,suspend,timeupdate,volumechange,waiting,animationend,animationiteration,animationstart,transitionend,message,open|}')"
+		],
+		
+		"description": "bind event with function"
+	
+	
+	
+	},
+	
+	
+	
+	"alert box":{
+		
+		"prefix": "alert",
+		
+		"body": [
+			"alert('${1:str}')"
+		],
+		
+		"description": "alert function"
+	
+	
+	
+	
+	
+	
+	},
+	
+	
+	
+	"acces id":{
+		
+		"prefix": "doc",
+		
+		"body": [
+		  "document['${1:id}']"
+	
+	
+		],
+		
+		"description": "acces id"
+	
+	
+	
+	
+	},
+	
+	
+	"select": {
+		
+		"prefix": "select",
+		
+		"body": [
+			"document.select('${1:css selector}')"
+	
+	
+		],
+		
+		"description": "returns a list with all the elements descending from elt whose CSS selector matches S"
+	
+	
+	},
+	
+	
+	"select_one": {
+		
+		"prefix": "selectone",
+		
+		"body": [
+			"document.select_one('${1:css selector}')"
+	
+	
+		],
+		
+		"description": "returns the elements matching the specified CSS selector, otherwise None"
+	
+	
+	},
+	
+	
+	
+	
+	"abs_left": {
+		
+		"prefix": "absleft",
+		
+		"body": [
+			"abs_left"
+	
+	
+		],
+		
+		"description": "position of the element relatively to the window left border"
+	
+	
+	},
+	
+	
+	"abs_top": {
+		
+		"prefix": "abstop",
+		
+		"body": [
+			"abs_top"
+	
+	
+		],
+		
+		"description": "position of the element relatively to the window top border"
+	
+	
+	},
+	
+	"children": {
+		
+		"prefix": "children",
+		
+		"body": [
+			"children"
+	
+	
+		],
+		
+		"description": "the element's children in the document tree"
+	
+	
+	},
+	
+	
+	"clear": {
+		
+		"prefix": "clear",
+		
+		"body": [
+			"clear()"
+	
+	
+		],
+		
+		"description": "removes all the descendants of the element"
+	
+	
+	},
+	
+	
+	
+	
+	"closest": {
+		
+		"prefix": "closest",
+		
+		"body": [
+			"closest('${1:tag_name'})"
+	
+	
+		],
+		
+		"description": "removes all the descendants of the element"
+	
+	
+	},
+	
+	
+	
+	"height": {
+		
+		"prefix": "height",
+		
+		"body": [
+			"height"
+	
+	
+		],
+		
+		"description": "element height in pixels (2)"
+	
+	
+	},
+	
+	
+	
+	
+	"index": {
+		
+		"prefix": "index",
+		
+		"body": [
+			"index(['${1:selector}'])"
+	
+	
+		],
+		
+		"description": "elt.index([selector]) returns the index (an integer) of the element among its parent's children. If selector is specified, only the elements matching the CSS selector are taken into account ; in this case, if no element matches, the method returns -1."
+	
+	
+	},
+	
+	
+	"inside": {
+		
+		"prefix": "inside",
+		
+		"body": [
+			"inside(${1:other})"
+	
+	
+		],
+		
+		"description": "elt.inside(other) tests if elt is contained inside element other"
+	
+	
+	},
+	
+	
+	"left": {
+		
+		"prefix": "left",
+		
+		"body": [
+			"left"
+	
+	
+		],
+		
+		"description": "the position of the element relatively to the left border of the first positioned parent (1)"
+	
+	
+	},
+	
+	
+	"parent": {
+		
+		"prefix": "parent",
+		
+		"body": [
+			"parent"
+	
+	
+		],
+		
+		"description": "the element's parent (None for doc)"
+	
+	
+	},
+	
+	
+	"text": {
+		
+		"prefix": "text",
+		
+		"body": [
+			"text"
+	
+	
+		],
+		
+		"description": "the text inside the element"
+	
+	
+	},
+	
+	
+	"top": {
+		
+		"prefix": "top",
+		
+		"body": [
+			"top"
+	
+	
+		],
+		
+		"description": "the position of the element relatively to the upper border of the first positioned parent (1)"
+	
+	
+	},
+	
+	
+	"width": {
+		
+		"prefix": "width",
+		
+		"body": [
+			"width"
+	
+	
+		],
+		
+		"description": "element width in pixels (2)"
+	
+	
+	},
+	
+	"html": {
+		
+		"prefix": "html",
+		
+		"body": [
+			"html"
+	
+	
+		],
+		
+		"description": "the HTML code inside the element"
+	
+	
+	},
+	
+	
+	
+	"options": {
+		
+		"prefix": "options",
+		
+		"body": [
+			"options[${1:index}]"
+	
+	
+		],
+		
+		"description": "access to an option by its index : option = elt.options[index]"
+	
+	
+	},
+	
+	
+	"options_insert": {
+		
+		"prefix": "optioninsert",
+		
+		"body": [
+			"options.insert(${1:index,$2option})"
+	
+	
+		],
+		
+		"description": "insertion of an option at the index position : elt.options.insert(index,option)"
+	
+	
+	},
+	
+	
+	"options_append": {
+		
+		"prefix": "optionsappend",
+		
+		"body": [
+			"options.apppend(${1:option})"
+	
+	
+		],
+		
+		"description": "insertion of an option at the index position : elt.options.insert(index,option)"
+	
+	
+	},
+	
+	
+	"bind": {
+		
+		"prefix": "bind",
+		
+		"body": [
+			"bind('${1|click,dblclick,mousedown,mousenter,mouseleave,mouseleave,mousemove,mouseover,mouseout,mouseup,keydown,keypress,keyup,abort,beforeunload,error,hashchange,load,pageshow,pagehide,resize,scroll,unload,blur,change,focus,focusin,focusout,input,invalid,reset,search,select,submit,drag,dragend,dragenter,dragleave,dragover,dragstart,drop,copy,cut,paste,afterprint,beforeprint,abort,canplay,message,mousewheel,online,offline,popstate,show,storage,toggle,wheel,touchcancel,touchend,touchmove,touchstart,canplay,canplaythrough,durationchange,emptied,ended,error,loadeddata,loadedmetadata,loadstart,pause,play,playing,progress,ratechange,seeked,seeking,stalled,suspend,timeupdate,volumechange,waiting,animationend,animationiteration,animationstart,transitionend,message,open|}',func)"
+	
+	
+		],
+		
+		"description": "elt.bind(evt_name[, handler])"
+	
+	
+	},
+	
+	
+	"unbind": {
+		
+		"prefix": "unbind",
+		
+		"body": [
+			"unbind('${1|click,dblclick,mousedown,mousenter,mouseleave,mouseleave,mousemove,mouseover,mouseout,mouseup,keydown,keypress,keyup,abort,beforeunload,error,hashchange,load,pageshow,pagehide,resize,scroll,unload,blur,change,focus,focusin,focusout,input,invalid,reset,search,select,submit,drag,dragend,dragenter,dragleave,dragover,dragstart,drop,copy,cut,paste,afterprint,beforeprint,abort,canplay,message,mousewheel,online,offline,popstate,show,storage,toggle,wheel,touchcancel,touchend,touchmove,touchstart,canplay,canplaythrough,durationchange,emptied,ended,error,loadeddata,loadedmetadata,loadstart,pause,play,playing,progress,ratechange,seeked,seeking,stalled,suspend,timeupdate,volumechange,waiting,animationend,animationiteration,animationstart,transitionend,message,open|}',func)"
+	
+	
+		],
+		
+		"description": "elt.unbind(evt_name[, handler])"
+	
+	
+	},
+	
+	
+	"events": {
+		
+		"prefix": "events",
+		
+		"body": [
+			"events('${1|click,dblclick,mousedown,mousenter,mouseleave,mouseleave,mousemove,mouseover,mouseout,mouseup,keydown,keypress,keyup,abort,beforeunload,error,hashchange,load,pageshow,pagehide,resize,scroll,unload,blur,change,focus,focusin,focusout,input,invalid,reset,search,select,submit,drag,dragend,dragenter,dragleave,dragover,dragstart,drop,copy,cut,paste,afterprint,beforeprint,abort,canplay,message,mousewheel,online,offline,popstate,show,storage,toggle,wheel,touchcancel,touchend,touchmove,touchstart,canplay,canplaythrough,durationchange,emptied,ended,error,loadeddata,loadedmetadata,loadstart,pause,play,playing,progress,ratechange,seeked,seeking,stalled,suspend,timeupdate,volumechange,waiting,animationend,animationiteration,animationstart,transitionend,message,open|}')"
+	
+	
+		],
+		
+		"description": "elt.events(evt_name)"
+	
+	
+	},
+	
+	"bubbles": {
+		
+		"prefix": "bubbles",
+		
+		"body": [
+			"bubbles"
+	
+	
+		],
+		
+		"description": "boolean, indicates whether the given event bubbles up through the DOM or not"
+	
+	
+	},
+	
+	
+	
+	"cancelable": {
+		
+		"prefix": "cancelable",
+		
+		"body": [
+			"cancelable"
+	
+	
+		],
+		
+		"description": "boolean, indicates whether the event is cancelable or not"
+	
+	
+	},
+	
+	
+	
+	"currentTarget": {
+		
+		"prefix": "currentTarget",
+		
+		"body": [
+			"currentTarget"
+	
+	
+		],
+		
+		"description": "instance of DOMNode ; identifies the current target for the event, as the event traverses the DOM. It always refers to the element the event handler has been attached to as opposed to event.target which identifies the element on which the event occurred."
+	
+	
+	},
+	
+	
+	"defaultPrevented": {
+		
+		"prefix": "defaultPrevented",
+		
+		"body": [
+			"defaultPrevented()"
+	
+	
+		],
+		
+		"description": "boolean indicating whether or not event.preventDefault() was called on the event"
+	
+	
+	},
+	
+	
+	"eventPhase": {
+		
+		"prefix": "eventPhase",
+		
+		"body": [
+			"eventPhase"
+	
+	
+		],
+		
+		"description": "integer, indicates which phase of the event flow is currently being evaluated"
+	
+	
+	},
+	
+	
+	"target": {
+		
+		"prefix": "target",
+		
+		"body": [
+			"target"
+	
+	
+		],
+		
+		"description": "DOMNode instance ; the object the event was dispatched on. It is different than event.currentTarget when the event handler is called in bubbling or capturing phase of the event"
+	
+	
+	},
+	
+	
+	"dispatchEvent": {
+		"prefix": "dispatchevent",
+		"body": [
+			"dispatchEvent(event)"
+	
+	
+		],
+		"description": "dispatchEvent"
+	
+	
+	},
+	
+	
+	"timeStamp": {
+		
+		"prefix": "timestamp",
+		
+		"body": [
+			"timeStamp"
+	
+	
+		],
+		
+		"description": "integer, the time (in milliseconds since Jan. 1st, 1970 at 0h) at which the event was created"
+	
+	
+	},
+	
+	
+	
+	"isTrusted": {
+		
+		"prefix": "istrusted",
+		
+		"body": [
+			"isTrusted"
+	
+	
+		],
+		
+		"description": "isTrusted"
+	
+	
+	},
+	
+	
+	
+	"view": {
+		
+		"prefix": "view",
+		
+		"body": [
+			"view"
+	
+	
+		],
+		
+		"description": "view"
+	
+	
+	},
+	
+	
+	
+	"preventDefault": {
+		
+		"prefix": "preventdefault",
+		
+		"body": [
+			"preventDefault()"
+	
+	
+		],
+		
+		"description": "prevents the execution of the action associated by default to the event"
+	
+	
+	},
+	
+	
+	
+	
+	"stopPropagation": {
+		
+		"prefix": "stoppropagation",
+		
+		"body": [
+			"stopPropagation()"
+	
+	
+		],
+		
+		"description": "prevents further propagation of the current event"
+	
+	
+	},
+	
+	
+	
+	
+	"UIEvent":{
+		
+		"prefix":"uievent",
+		
+		"body":["UIEvent"],
+		
+		"description":"UIEvent"},
+	"ProgressEvent":{
+		"prefix":"progressevent",
+		
+		"body":["ProgressEvent"],
+		
+		"description":"ProgressEvent"},
+	"Event":{
+		
+		"prefix":"event",
+		
+		"body":["Event"],
+		
+		"description":"Event"},
+	"AnimationEvent":{
+		
+		"prefix":"animationevent",
+		
+		"body":["AnimationEvent"],
+		
+		"description":"AnimationEvent"},
+	
+	"AudioProcessingEvent ":{
+		
+		"prefix":"audioprocessingevent ",
+		
+		"body":["AudioProcessingEvent "],
+		
+		"description":"AudioProcessingEvent "},
+	
+	"BeforeUnloadEvent":{
+		"prefix":"beforeunloadevent",
+		"body":["BeforeUnloadEvent"],
+		"description":"BeforeUnloadEvent"},
+	"TimeEvent":{
+		"prefix":"timeevent",
+		"body":["TimeEvent"],
+		"description":"TimeEvent"},
+	"FocusEvent":{
+		"prefix":"focusevent",
+		"body":["FocusEvent"],
+		"description":"FocusEvent"},
+	"SpeechSynthesisEvent":{
+		"prefix":"speechsynthesisevent",
+		"body":["SpeechSynthesisEvent"],
+		"description":"SpeechSynthesisEvent"},
+	"MouseEvent":{
+		"prefix":"mouseevent",
+		"body":["MouseEvent"],
+		"description":"MouseEvent"},
+	"OfflineAudioCompletionEvent":{
+		"prefix":"offlineaudiocompletionevent",
+		"body":["OfflineAudioCompletionEvent"],
+		"description":"OfflineAudioCompletionEvent"},
+	"CompositionEvent":{
+		"prefix":"compositionevent",
+		"body":["CompositionEvent"],
+		"description":"CompositionEvent"},
+	"ClipboardEvent":{
+		"prefix":"clipboardevent",
+		"body":["ClipboardEvent"],
+		"description":"ClipboardEvent"},
+	"DeviceLightEvent":{
+		"prefix":"devicelightevent",
+		"body":["DeviceLightEvent"],
+		"description":"DeviceLightEvent"},
+	"DeviceMotionEvent":{
+		"prefix":"devicemotionevent",
+		"body":["DeviceMotionEvent"],
+		"description":"DeviceMotionEvent"},
+	"DeviceOrientationEvent":{
+		"prefix":"deviceorientationevent",
+		"body":["DeviceOrientationEvent"],
+		"description":"DeviceOrientationEvent"},
+	"DeviceProximityEvent":{
+		"prefix":"deviceproximityevent",
+		"body":["DeviceProximityEvent"],
+		"description":"DeviceProximityEvent"},
+	"MutationNameEvent":{
+		"prefix":"mutationnameevent",
+		"body":["MutationNameEvent"],
+		"description":"MutationNameEvent"},
+	"MutationEvent":{
+		"prefix":"mutationevent",
+		"body":["MutationEvent"],
+		"description":"MutationEvent"},
+	"DragEvent":{
+		"prefix":"dragevent",
+		"body":["DragEvent"],
+		"description":"DragEvent"},
+	"SpeechSynthesisErrorEvent":{
+		"prefix":"speechsynthesiserrorevent",
+		"body":["SpeechSynthesisErrorEvent"],
+		"description":"SpeechSynthesisErrorEvent"},
+	"GamepadEvent":{
+		"prefix":"gamepadevent",
+		"body":["GamepadEvent"],
+		"description":"GamepadEvent"},
+	"PointerEvent":{
+		"prefix":"pointerevent",
+		"body":["PointerEvent"],
+		"description":"PointerEvent"},
+	"HashChangeEvent":{
+		"prefix":"hashchangeevent",
+		"body":["HashChangeEvent"],
+		"description":"HashChangeEvent"},
+	"KeyboardEvent":{
+		"prefix":"keyboardevent",
+		"body":["KeyboardEvent"],
+		"description":"KeyboardEvent"},
+	"MessageEvent":{
+		"prefix":"messageevent",
+		"body":["MessageEvent"],
+		"description":"MessageEvent"},
+	"ServiceWorkerMessageEvent":{
+		"prefix":"serviceworkermessageevent",
+		"body":["ServiceWorkerMessageEvent"],
+		"description":"ServiceWorkerMessageEvent"},
+	"ExtendableMessageEvent":{
+		"prefix":"extendablemessageevent",
+		"body":["ExtendableMessageEvent"],
+		"description":"ExtendableMessageEvent"},
+	"SpeechRecognitionEvent":{
+		"prefix":"speechrecognitionevent",
+		"body":["SpeechRecognitionEvent"],
+		"description":"SpeechRecognitionEvent"},
+	"NotificationEvent":{
+		"prefix":"notificationevent",
+		"body":["NotificationEvent"],
+		"description":"NotificationEvent"},
+	"PageTransitionEvent":{
+		"prefix":"pagetransitionevent",
+		"body":["PageTransitionEvent"],
+		"description":"PageTransitionEvent"},
+	"PopStateEvent":{
+		"prefix":"popstateevent",
+		"body":["PopStateEvent"],
+		"description":"PopStateEvent"},
+	"PushEvent":{
+		"prefix":"pushevent",
+		"body":["PushEvent"],
+		"description":"PushEvent"},
+	"Performance":{
+		"prefix":"performance",
+		"body":["Performance"],
+		"description":"Performance"},
+	"StorageEvent":{
+		"prefix":"storageevent",
+		"body":["StorageEvent"],
+		"description":"StorageEvent"},
+	"SVGEvent":{
+		"prefix":"svgevent",
+		"body":["SVGEvent"],
+		"description":"SVGEvent"},
+	"SVGZoomEvent":{
+		"prefix":"svgzoomevent",
+		"body":["SVGZoomEvent"],
+		"description":"SVGZoomEvent"},
+	"TouchEvent":{
+		"prefix":"touchevent",
+		"body":["TouchEvent"],
+		"description":"TouchEvent"},
+	"TransitionEvent":{
+		"prefix":"transitionevent",
+		"body":["TransitionEvent"],
+		"description":"TransitionEvent"},
+	"UserProximityEvent":{
+		"prefix":"userproximityevent",
+		"body":["UserProximityEvent"],
+		"description":"UserProximityEvent"},
+	"WheelEvent":{
+		"prefix":"wheelevent",
+		"body":["WheelEvent"],
+		"description":"WheelEvent"},
+	
+		"altKey":{
+			"prefix":"altKey",
+			"body":["altKey"],
+			"description":"Returns whether the 'ALT' key was pressed when the mouse event was triggered"},
+		
+		"button":{
+			"prefix":"button",
+			"body":["button"],
+			"description":"Returns which mouse button was pressed when the mouse event was triggered"},
+		
+		"buttons":{
+			"prefix":"buttons",
+			"body":["buttons"],
+			"description":"Returns which mouse buttons were pressed when the mouse event was triggered"},
+		
+		"clientX":{
+			"prefix":"clientX",
+			"body":["clientX"],
+			"description":"Returns the horizontal coordinate of the mouse pointer, relative to the current window, when the mouse event was triggered"},
+		
+		"clientY":{
+			"prefix":"clientY",
+			"body":["clientY"],
+			"description":"Returns the vertical coordinate of the mouse pointer, relative to the current window, when the mouse event was triggered"},
+		
+		"ctrlKey":{
+			"prefix":"ctrlKey",
+			"body":["ctrlKey"],
+			"description":"Returns whether the 'CTRL' key was pressed when the mouse event was triggered"},
+		
+		"detail":{
+			"prefix":"detail",
+			"body":["detail"],
+			"description":"Returns a number that indicates how many times the mouse was clicked"},
+		
+		"metaKey":{
+			"prefix":"metaKey",
+			"body":["metaKey"],
+			"description":"Returns whether the 'META' key was pressed when an event was triggered"},
+		
+		"pageX":{
+			"prefix":"pageX",
+			"body":["pageX"],
+			"description":"Returns the horizontal coordinate of the mouse pointer, relative to the document, when the mouse event was triggered"},
+		
+		"pageY":{
+			"prefix":"pageY",
+			"body":["pageY"],
+			"description":"Returns the vertical coordinate of the mouse pointer, relative to the document, when the mouse event was triggered"},
+		
+		"relatedTarget":{
+			"prefix":"relatedTarget",
+			"body":["relatedTarget"],
+			"description":"Returns the element related to the element that triggered the mouse event"},
+		
+		"screenX":{
+			"prefix":"screenX",
+			"body":["screenX"],
+			"description":"Returns the horizontal coordinate of the mouse pointer, relative to the screen, when an event was triggered"},
+		
+		"screenY":{
+			"prefix":"screenY",
+			"body":["screenY"],
+			"description":"Returns the vertical coordinate of the mouse pointer, relative to the screen, when an event was triggered"},
+		
+		"shiftKey":{
+			"prefix":"shiftKey",
+			"body":["shiftKey"],
+			"description":"Returns whether the 'SHIFT' key was pressed when an event was triggered"},
+			
+		"which":{
+			"prefix":"which",
+			"body":["which"],
+			"description":"Returns which mouse button was pressed when the mouse event was triggered"},
+		
+			"charCode":{
+				"prefix":"charcode",
+				"body":["charCode"],
+				"description":"Returns the Unicode character code of the key that triggered the onkeypress event"},
+			
+			"key":{
+				"prefix":"key",
+				"body":["key"],
+				"description":"Returns the key value of the key represented by the event"},
+			
+			"keyCode":{
+				"prefix":"keycode",
+				"body":["keyCode"],
+				"description":"Returns the Unicode character code of the key that triggered the onkeypress event, or the Unicode key code of the key that triggered the onkeydown or onkeyup event"},
+			
+			"location":{
+				"prefix":"location",
+				"body":["location"],
+				"description":"Returns the location of a key on the keyboard or device"},
+			
+			"dataTransfer":{
+					"prefix":"datatransfer.",
+					"body":["dataTransfer.${1|dropEffect,effectAllowed,files,items,types,getData('type'),setData('type'),clearData()|}"
+					],
+					"description":"Creates and returns a new DataTransfer object."},
+	
+			"dropeffect":{
+			"prefix":"dataTransfer.dropEffect =",
+			"body":["datatransfer.dropEffect = '${1|copy,move,link,none|}'"
+						],
+			"description":"Drop effect."},
+	
+			"effectAllowed":{
+				"prefix":"dataTransfer.effectAllowed =",
+				"body":["datatransfer.effectAllowed = '${1|copy,move,link,copyMove,linkMove,all,none,uninitialized|}'"
+							],
+				"description":"effect allowed."},
+	
+			"draggable":{
+				"prefix":"draggable",
+				"body":["draggable = ${1|True,False|}"
+								],
+				"description":"draggable."},
+	
+			"query":{
+				"prefix":"query",
+				"body":["document.query['cle']"
+									],
+				"description":"query"},	
+	
+			"querygetlist":{
+				"prefix":"querygetfirst",
+				"body":["document.query.getfirst(cle[,defaut])"
+										],
+				"description":"query first key"},	
+			"querygetfirst":{
+				"prefix":"querygetlist",
+				"body":["document.query.getlist(cle)"
+											],
+				"description":"query list key"},
+	
+			"querygetvalue":{
+				"prefix":"querygetvalue",
+				"body":["document.query.getvalue(cle[,defaut])"
+											],
+				"description":"query get value"},	
+	
+			"ajax":{
+				"prefix":"ajax",
+				"body":["ajax()"
+												],
+				"description":"ajax"},	
+							
+			"bind ajax":{
+				"prefix":"bindajax",
+				"body":["bind('${1|uninitialized,loading,loaded,interactive,complete|}',fonction)"
+													],
+				"description":"ajax bind"},	
+	
+	
+						
+			"open methode ajax":{
+				"prefix":"openmethod",
+				"body":["open('${1|GET,POST|}',url,${2|True,False|})"										],
+				"description":"open methode ajax"},	
+	
+	
+								
+			"ready state ajax":{
+				"prefix":"readystate",
+				"body":["readyState == ${1|1,2,3,4|}:"										],
+				"description":"ready state ajax"},	
+	
+			"set_header ajax":{
+				"prefix":"setheader",
+				"body":["set_header(name,value)"										],
+				"description":"set_header ajax"},
+				
+			"set_timeout":{
+				"prefix":"settimeout",
+				"body":["set_timeout(duree, fonction)"										],
+				"description":"set_timeout ajax"},	
+															
+	
+			"send ajax data":{
+				"prefix":"senddata",
+				"body":["send([data])"										],
+				"description":"send ajax data"},
+							
+			"status ajax":{
+				"prefix":"status",
+				"body":["status == ${1|200,301,302,403,404,500,503,504|}:"										],
+				"description":"ready state ajax"},	
+	
+	
+			"xml":{
+				"prefix":"xml",
+				"body":["xml"										],
+				"description":"xml"},
+		
+				"A":{
+					"prefix":"a",
+					"body":["A()"],
+					"description":"A()"},
+					
+				"ABBR":{
+					"prefix":"abbr",
+					"body":["ABBR()"],
+					"description":"ABBR()"},
+					
+				"ACRONYM":{
+					"prefix":"acronym",
+					"body":["ACRONYM()"],
+					"description":"ACRONYM()"},
+					
+				"ADDRESS":{
+					"prefix":"address",
+					"body":["ADDRESS()"],
+					"description":"ADDRESS()"},
+					
+				"APPLET":{
+					"prefix":"applet",
+					"body":["APPLET()"],
+					"description":"APPLET()"},
+					
+				"AREA":{
+					"prefix":"area",
+					"body":["AREA()"],
+					"description":"AREA()"},
+					
+				"B":{
+					"prefix":"b",
+					"body":["B()"],
+					"description":"B()"},
+					
+				"BASE":{
+					"prefix":"base",
+					"body":["BASE()"],
+					"description":"BASE()"},
+					
+				"BASEFONT":{
+					"prefix":"basefont",
+					"body":["BASEFONT()"],
+					"description":"BASEFONT()"},
+					
+				"BDO":{
+					"prefix":"bdo",
+					"body":["BDO()"],
+					"description":"BDO()"},
+					
+				"BIG":{
+					"prefix":"big",
+					"body":["BIG()"],
+					"description":"BIG()"},
+					
+				"BLOCKQUOTE":{
+					"prefix":"blockquote",
+					"body":["BLOCKQUOTE()"],
+					"description":"BLOCKQUOTE()"},
+					
+				
+					"BODY":{
+					"prefix":
+					"body",
+					"body":[
+						"BODY()"],
+						"description":
+					"BODY()"},
+					
+				"BR":{
+					"prefix":"br",
+					"body":["BR()"],
+					"description":"BR()"},
+					
+				"BUTTON":{
+					"prefix":"button",
+					"body":["BUTTON()"],
+					"description":"BUTTON()"},
+					
+				"CAPTION":{
+					"prefix":"caption",
+					"body":["CAPTION()"],
+					"description":"CAPTION()"},
+					
+				"CENTER":{
+					"prefix":"center",
+					"body":["CENTER()"],
+					"description":"CENTER()"},
+					
+				"CITE":{
+					"prefix":"cite",
+					"body":["CITE()"],
+					"description":"CITE()"},
+					
+				"CODE":{
+					"prefix":"code",
+					"body":["CODE()"],
+					"description":"CODE()"},
+					
+				"COL":{
+					"prefix":"col",
+					"body":["COL()"],
+					"description":"COL()"},
+					
+				"COLGROUP":{
+					"prefix":"colgroup",
+					"body":["COLGROUP()"],
+					"description":"COLGROUP()"},
+					
+				"DD":{
+					"prefix":"dd",
+					"body":["DD()"],
+					"description":"DD()"},
+					
+				"DEL":{
+					"prefix":"del",
+					"body":["DEL()"],
+					"description":"DEL()"},
+					
+				"DFN":{
+					"prefix":"dfn",
+					"body":["DFN()"],
+					"description":"DFN()"},
+					
+				"DIR":{
+					"prefix":"dir",
+					"body":["DIR()"],
+					"description":"DIR()"},
+					
+				"DIV":{
+					"prefix":"div",
+					"body":["DIV()"],
+					"description":"DIV()"},
+					
+				"DL":{
+					"prefix":"dl",
+					"body":["DL()"],
+					"description":"DL()"},
+					
+				"DT":{
+					"prefix":"dt",
+					"body":["DT()"],
+					"description":"DT()"},
+					
+				"EM":{
+					"prefix":"em",
+					"body":["EM()"],
+					"description":"EM()"},
+					
+				"FIELDSET":{
+					"prefix":"fieldset",
+					"body":["FIELDSET()"],
+					"description":"FIELDSET()"},
+					
+				"FONT":{
+					"prefix":"font",
+					"body":["FONT()"],
+					"description":"FONT()"},
+					
+				"FORM":{
+					"prefix":"form",
+					"body":["FORM()"],
+					"description":"FORM()"},
+					
+				"FRAME":{
+					"prefix":"frame",
+					"body":["FRAME()"],
+					"description":"FRAME()"},
+					
+				"FRAMESET":{
+					"prefix":"frameset",
+					"body":["FRAMESET()"],
+					"description":"FRAMESET()"},
+					
+				"H1":{
+					"prefix":"h1",
+					"body":["H1()"],
+					"description":"H1()"},
+					
+				"H2":{
+					"prefix":"h2",
+					"body":["H2()"],
+					"description":"H2()"},
+					
+				"H3":{
+					"prefix":"h3",
+					"body":["H3()"],
+					"description":"H3()"},
+					
+				"H4":{
+					"prefix":"h4",
+					"body":["H4()"],
+					"description":"H4()"},
+					
+				"H5":{
+					"prefix":"h5",
+					"body":["H5()"],
+					"description":"H5()"},
+					
+				"H6":{
+					"prefix":"h6",
+					"body":["H6()"],
+					"description":"H6()"},
+					
+				"HEAD":{
+					"prefix":"head",
+					"body":["HEAD()"],
+					"description":"HEAD()"},
+					
+				"HR":{
+					"prefix":"hr",
+					"body":["HR()"],
+					"description":"HR()"},
+					
+				"HTML":{
+					"prefix":"html",
+					"body":["HTML()"],
+					"description":"HTML()"},
+					
+				"I":{
+					"prefix":"i",
+					"body":["I()"],
+					"description":"I()"},
+					
+				"IFRAME":{
+					"prefix":"iframe",
+					"body":["IFRAME()"],
+					"description":"IFRAME()"},
+					
+				"IMG":{
+					"prefix":"img",
+					"body":["IMG()"],
+					"description":"IMG()"},
+					
+				"INPUT":{
+					"prefix":"input",
+					"body":["INPUT()"],
+					"description":"INPUT()"},
+					
+				"INS":{
+					"prefix":"ins",
+					"body":["INS()"],
+					"description":"INS()"},
+					
+				"ISINDEX":{
+					"prefix":"isindex",
+					"body":["ISINDEX()"],
+					"description":"ISINDEX()"},
+					
+				"KBD":{
+					"prefix":"kbd",
+					"body":["KBD()"],
+					"description":"KBD()"},
+					
+				"LABEL":{
+					"prefix":"label",
+					"body":["LABEL()"],
+					"description":"LABEL()"},
+					
+				"LEGEND":{
+					"prefix":"legend",
+					"body":["LEGEND()"],
+					"description":"LEGEND()"},
+					
+				"LI":{
+					"prefix":"li",
+					"body":["LI()"],
+					"description":"LI()"},
+					
+				"LINK":{
+					"prefix":"link",
+					"body":["LINK()"],
+					"description":"LINK()"},
+					
+				"MAP":{
+					"prefix":"map",
+					"body":["MAP()"],
+					"description":"MAP()"},
+					
+				"MENU":{
+					"prefix":"menu",
+					"body":["MENU()"],
+					"description":"MENU()"},
+					
+				"META":{
+					"prefix":"meta",
+					"body":["META()"],
+					"description":"META()"},
+					
+				"NOFRAMES":{
+					"prefix":"noframes",
+					"body":["NOFRAMES()"],
+					"description":"NOFRAMES()"},
+					
+				"NOSCRIPT":{
+					"prefix":"noscript",
+					"body":["NOSCRIPT()"],
+					"description":"NOSCRIPT()"},
+					
+				"OBJECT":{
+					"prefix":"object",
+					"body":["OBJECT()"],
+					"description":"OBJECT()"},
+					
+				"OL":{
+					"prefix":"ol",
+					"body":["OL()"],
+					"description":"OL()"},
+					
+				"OPTGROUP":{
+					"prefix":"optgroup",
+					"body":["OPTGROUP()"],
+					"description":"OPTGROUP()"},
+					
+				"OPTION":{
+					"prefix":"option",
+					"body":["OPTION()"],
+					"description":"OPTION()"},
+					
+				"P":{
+					"prefix":"p",
+					"body":["P()"],
+					"description":"P()"},
+					
+				"PARAM":{
+					"prefix":"param",
+					"body":["PARAM()"],
+					"description":"PARAM()"},
+					
+				"PRE":{
+					"prefix":"pre",
+					"body":["PRE()"],
+					"description":"PRE()"},
+					
+				"Q":{
+					"prefix":"q",
+					"body":["Q()"],
+					"description":"Q()"},
+					
+				"S":{
+					"prefix":"s",
+					"body":["S()"],
+					"description":"S()"},
+					
+				"SAMP":{
+					"prefix":"samp",
+					"body":["SAMP()"],
+					"description":"SAMP()"},
+					
+				"SCRIPT":{
+					"prefix":"script",
+					"body":["SCRIPT()"],
+					"description":"SCRIPT()"},
+					
+				"SELECT":{
+					"prefix":"select",
+					"body":["SELECT()"],
+					"description":"SELECT()"},
+					
+				"SMALL":{
+					"prefix":"small",
+					"body":["SMALL()"],
+					"description":"SMALL()"},
+					
+				"SPAN":{
+					"prefix":"span",
+					"body":["SPAN()"],
+					"description":"SPAN()"},
+					
+				"STRIKE":{
+					"prefix":"strike",
+					"body":["STRIKE()"],
+					"description":"STRIKE()"},
+					
+				"STRONG":{
+					"prefix":"strong",
+					"body":["STRONG()"],
+					"description":"STRONG()"},
+					
+				"STYLE":{
+					"prefix":"style",
+					"body":["STYLE()"],
+					"description":"STYLE()"},
+					
+				"SUB":{
+					"prefix":"sub",
+					"body":["SUB()"],
+					"description":"SUB()"},
+					
+				"SUP":{
+					"prefix":"sup",
+					"body":["SUP()"],
+					"description":"SUP()"},
+					
+				"SVG":{
+					"prefix":"svg",
+					"body":["SVG()"],
+					"description":"SVG()"},
+					
+				"TABLE":{
+					"prefix":"table",
+					"body":["TABLE()"],
+					"description":"TABLE()"},
+					
+				
+				"TBODY":{
+					"prefix":"tbody",
+					"body":["TBODY()"],
+					"description":"TBODY()"},
+					
+				"TD":{
+					"prefix":"td",
+					"body":["TD()"],
+					"description":"TD()"},
+					
+				"TEXTAREA":{
+					"prefix":"textarea",
+					"body":["TEXTAREA()"],
+					"description":"TEXTAREA()"},
+					
+				"TFOOT":{
+					"prefix":"tfoot",
+					"body":["TFOOT()"],
+					"description":"TFOOT()"},
+					
+				"TH":{
+					"prefix":"th",
+					"body":["TH()"],
+					"description":"TH()"},
+					
+				"THEAD":{
+					"prefix":"thead",
+					"body":["THEAD()"],
+					"description":"THEAD()"},
+					
+				"TITLE":{
+					"prefix":"title",
+					"body":["TITLE()"],
+					"description":"TITLE()"},
+					
+				"TR":{
+					"prefix":"tr",
+					"body":["TR()"],
+					"description":"TR()"},
+					
+				"TT":{
+					"prefix":"tt",
+					"body":["TT()"],
+					"description":"TT()"},
+					
+				"U":{
+					"prefix":"u",
+					"body":["U()"],
+					"description":"U()"},
+					
+				"UL":{
+					"prefix":"ul",
+					"body":["UL()"],
+					"description":"UL()"},
+					
+				"VAR":{
+					"prefix":"var",
+					"body":["VAR()"],
+					"description":"VAR()"},
+					
+				"ARTICLE":{
+					"prefix":"article",
+					"body":["ARTICLE()"],
+					"description":"ARTICLE()"},
+					
+				"ASIDE":{
+					"prefix":"aside",
+					"body":["ASIDE()"],
+					"description":"ASIDE()"},
+					
+				"AUDIO":{
+					"prefix":"audio",
+					"body":["AUDIO()"],
+					"description":"AUDIO()"},
+					
+				"BDI":{
+					"prefix":"bdi",
+					"body":["BDI()"],
+					"description":"BDI()"},
+					
+				"CANVAS":{
+					"prefix":"canvas",
+					"body":["CANVAS()"],
+					"description":"CANVAS()"},
+					
+				"COMMAND":{
+					"prefix":"command",
+					"body":["COMMAND()"],
+					"description":"COMMAND()"},
+					
+				"DATA":{
+					"prefix":"data",
+					"body":["DATA()"],
+					"description":"DATA()"},
+					
+				"DATALIST":{
+					"prefix":"datalist",
+					"body":["DATALIST()"],
+					"description":"DATALIST()"},
+					
+				"EMBED":{
+					"prefix":"embed",
+					"body":["EMBED()"],
+					"description":"EMBED()"},
+					
+				"FIGCAPTION":{
+					"prefix":"figcaption",
+					"body":["FIGCAPTION()"],
+					"description":"FIGCAPTION()"},
+					
+				"FIGURE":{
+					"prefix":"figure",
+					"body":["FIGURE()"],
+					"description":"FIGURE()"},
+					
+				"FOOTER":{
+					"prefix":"footer",
+					"body":["FOOTER()"],
+					"description":"FOOTER()"},
+					
+				"HEADER":{
+					"prefix":"header",
+					"body":["HEADER()"],
+					"description":"HEADER()"},
+					
+				"KEYGEN":{
+					"prefix":"keygen",
+					"body":["KEYGEN()"],
+					"description":"KEYGEN()"},
+					
+				"MAIN":{
+					"prefix":"main",
+					"body":["MAIN()"],
+					"description":"MAIN()"},
+					
+				"MARK":{
+					"prefix":"mark",
+					"body":["MARK()"],
+					"description":"MARK()"},
+					
+				"MATH":{
+					"prefix":"math",
+					"body":["MATH()"],
+					"description":"MATH()"},
+					
+				"METER":{
+					"prefix":"meter",
+					"body":["METER()"],
+					"description":"METER()"},
+					
+				"NAV":{
+					"prefix":"nav",
+					"body":["NAV()"],
+					"description":"NAV()"},
+					
+				"OUTPUT":{
+					"prefix":"output",
+					"body":["OUTPUT()"],
+					"description":"OUTPUT()"},
+					
+				"PROGRESS":{
+					"prefix":"progress",
+					"body":["PROGRESS()"],
+					"description":"PROGRESS()"},
+					
+				"RB":{
+					"prefix":"rb",
+					"body":["RB()"],
+					"description":"RB()"},
+					
+				"RP":{
+					"prefix":"rp",
+					"body":["RP()"],
+					"description":"RP()"},
+					
+				"RT":{
+					"prefix":"rt",
+					"body":["RT()"],
+					"description":"RT()"},
+					
+				"RTC":{
+					"prefix":"rtc",
+					"body":["RTC()"],
+					"description":"RTC()"},
+					
+				"RUBY":{
+					"prefix":"ruby",
+					"body":["RUBY()"],
+					"description":"RUBY()"},
+					
+				"SECTION":{
+					"prefix":"section",
+					"body":["SECTION()"],
+					"description":"SECTION()"},
+					
+				"SOURCE":{
+					"prefix":"source",
+					"body":["SOURCE()"],
+					"description":"SOURCE()"},
+					
+				"SUMMARY":{
+					"prefix":"summary",
+					"body":["SUMMARY()"],
+					"description":"SUMMARY()"},
+					
+				"TEMPLATE":{
+					"prefix":"template",
+					"body":["TEMPLATE()"],
+					"description":"TEMPLATE()"},
+					
+				"TIME":{
+					"prefix":"time",
+					"body":["TIME()"],
+					"description":"TIME()"},
+					
+				"TRACK":{
+					"prefix":"track",
+					"body":["TRACK()"],
+					"description":"TRACK()"},
+					
+				"VIDEO":{
+					"prefix":"video",
+					"body":["VIDEO()"],
+					"description":"VIDEO()"},
+					
+				"WBR":{
+					"prefix":"wbr",
+					"body":["WBR()"],
+					"description":"WBR()"},
+					
+				"DETAILS":{
+					"prefix":"details",
+					"body":["DETAILS()"],
+					"description":"DETAILS()"},
+					
+				"DIALOG":{
+					"prefix":"dialog",
+					"body":["DIALOG()"],
+					"description":"DIALOG()"},
+					
+				"MENUITEM":{
+					"prefix":"menuitem",
+					"body":["MENUITEM()"],
+					"description":"MENUITEM()"},
+					
+				"PICTURE":{
+					"prefix":"picture",
+					"body":["PICTURE()"],
+					"description":"PICTURE()"},
+					
+					
+				"Class brython":{
+				"prefix":"Class",
+				"body":["Class=''"],
+				"description":"Class brython"},
+	
+				"alignContent brython":{
+					"prefix":"aligncontent",
+					"body":["alignContent"],
+					"description":"alignContent"},
+				
+				"alignItems brython":{
+					"prefix":"alignitems",
+					"body":["alignItems"],
+					"description":"alignItems"},
+				
+				"alignSelf brython":{
+					"prefix":"alignself",
+					"body":["alignSelf"],
+					"description":"alignSelf"},
+				
+				"animation brython":{
+					"prefix":"animation",
+					"body":["animation"],
+					"description":"animation"},
+				
+				"animationDelay brython":{
+					"prefix":"animationdelay",
+					"body":["animationDelay"],
+					"description":"animationDelay"},
+				
+				"animationDirection brython":{
+					"prefix":"animationdirection",
+					"body":["animationDirection"],
+					"description":"animationDirection"},
+				
+				"animationDuration brython":{
+					"prefix":"animationduration",
+					"body":["animationDuration"],
+					"description":"animationDuration"},
+				
+				"animationFillMode brython":{
+					"prefix":"animationfillmode",
+					"body":["animationFillMode"],
+					"description":"animationFillMode"},
+				
+				"animationIterationCount brython":{
+					"prefix":"animationiterationcount",
+					"body":["animationIterationCount"],
+					"description":"animationIterationCount"},
+				
+				"animationName brython":{
+					"prefix":"animationname",
+					"body":["animationName"],
+					"description":"animationName"},
+				
+				"animationTimingFunction brython":{
+					"prefix":"animationtimingfunction",
+					"body":["animationTimingFunction"],
+					"description":"animationTimingFunction"},
+				
+				"animationPlayState brython":{
+					"prefix":"animationplaystate",
+					"body":["animationPlayState"],
+					"description":"animationPlayState"},
+				
+				"background brython":{
+					"prefix":"background",
+					"body":["background"],
+					"description":"background"},
+				
+				"backgroundAttachment brython":{
+					"prefix":"backgroundattachment",
+					"body":["backgroundAttachment"],
+					"description":"backgroundAttachment"},
+				
+				"backgroundColor brython":{
+					"prefix":"backgroundcolor",
+					"body":["backgroundColor"],
+					"description":"backgroundColor"},
+				
+				"backgroundImage brython":{
+					"prefix":"backgroundimage",
+					"body":["backgroundImage"],
+					"description":"backgroundImage"},
+				
+				"backgroundPosition brython":{
+					"prefix":"backgroundposition",
+					"body":["backgroundPosition"],
+					"description":"backgroundPosition"},
+				
+				"backgroundRepeat brython":{
+					"prefix":"backgroundrepeat",
+					"body":["backgroundRepeat"],
+					"description":"backgroundRepeat"},
+				
+				"backgroundClip brython":{
+					"prefix":"backgroundclip",
+					"body":["backgroundClip"],
+					"description":"backgroundClip"},
+				
+				"backgroundOrigin brython":{
+					"prefix":"backgroundorigin",
+					"body":["backgroundOrigin"],
+					"description":"backgroundOrigin"},
+				
+				"backgroundSize brython":{
+					"prefix":"backgroundsize",
+					"body":["backgroundSize"],
+					"description":"backgroundSize"},
+				
+				"backfaceVisibility brython":{
+					"prefix":"backfacevisibility",
+					"body":["backfaceVisibility"],
+					"description":"backfaceVisibility"},
+				
+				"border brython":{
+					"prefix":"border",
+					"body":["border"],
+					"description":"border"},
+				
+				"borderBottom brython":{
+					"prefix":"borderbottom",
+					"body":["borderBottom"],
+					"description":"borderBottom"},
+				
+				"borderBottomColor brython":{
+					"prefix":"borderbottomcolor",
+					"body":["borderBottomColor"],
+					"description":"borderBottomColor"},
+				
+				"borderBottomLeftRadius brython":{
+					"prefix":"borderbottomleftradius",
+					"body":["borderBottomLeftRadius"],
+					"description":"borderBottomLeftRadius"},
+				
+				"borderBottomRightRadius brython":{
+					"prefix":"borderbottomrightradius",
+					"body":["borderBottomRightRadius"],
+					"description":"borderBottomRightRadius"},
+				
+				"borderBottomStyle brython":{
+					"prefix":"borderbottomstyle",
+					"body":["borderBottomStyle"],
+					"description":"borderBottomStyle"},
+				
+				"borderBottomWidth brython":{
+					"prefix":"borderbottomwidth",
+					"body":["borderBottomWidth"],
+					"description":"borderBottomWidth"},
+				
+				"borderCollapse brython":{
+					"prefix":"bordercollapse",
+					"body":["borderCollapse"],
+					"description":"borderCollapse"},
+				
+				"borderColor brython":{
+					"prefix":"bordercolor",
+					"body":["borderColor"],
+					"description":"borderColor"},
+				
+				"borderImage brython":{
+					"prefix":"borderimage",
+					"body":["borderImage"],
+					"description":"borderImage"},
+				
+				"borderImageOutset brython":{
+					"prefix":"borderimageoutset",
+					"body":["borderImageOutset"],
+					"description":"borderImageOutset"},
+				
+				"borderImageRepeat brython":{
+					"prefix":"borderimagerepeat",
+					"body":["borderImageRepeat"],
+					"description":"borderImageRepeat"},
+				
+				"borderImageSlice brython":{
+					"prefix":"borderimageslice",
+					"body":["borderImageSlice"],
+					"description":"borderImageSlice"},
+				
+				"borderImageSource brython":{
+					"prefix":"borderimagesource",
+					"body":["borderImageSource"],
+					"description":"borderImageSource"},
+				
+				"borderImageWidth brython":{
+					"prefix":"borderimagewidth",
+					"body":["borderImageWidth"],
+					"description":"borderImageWidth"},
+				
+				"borderLeft brython":{
+					"prefix":"borderleft",
+					"body":["borderLeft"],
+					"description":"borderLeft"},
+				
+				"borderLeftColor brython":{
+					"prefix":"borderleftcolor",
+					"body":["borderLeftColor"],
+					"description":"borderLeftColor"},
+				
+				"borderLeftStyle brython":{
+					"prefix":"borderleftstyle",
+					"body":["borderLeftStyle"],
+					"description":"borderLeftStyle"},
+				
+				"borderLeftWidth brython":{
+					"prefix":"borderleftwidth",
+					"body":["borderLeftWidth"],
+					"description":"borderLeftWidth"},
+				
+				"borderRadius brython":{
+					"prefix":"borderradius",
+					"body":["borderRadius"],
+					"description":"borderRadius"},
+				
+				"borderRight brython":{
+					"prefix":"borderright",
+					"body":["borderRight"],
+					"description":"borderRight"},
+				
+				"borderRightColor brython":{
+					"prefix":"borderrightcolor",
+					"body":["borderRightColor"],
+					"description":"borderRightColor"},
+				
+				"borderRightStyle brython":{
+					"prefix":"borderrightstyle",
+					"body":["borderRightStyle"],
+					"description":"borderRightStyle"},
+				
+				"borderRightWidth brython":{
+					"prefix":"borderrightwidth",
+					"body":["borderRightWidth"],
+					"description":"borderRightWidth"},
+				
+				"borderSpacing brython":{
+					"prefix":"borderspacing",
+					"body":["borderSpacing"],
+					"description":"borderSpacing"},
+				
+				"borderStyle brython":{
+					"prefix":"borderstyle",
+					"body":["borderStyle"],
+					"description":"borderStyle"},
+				
+				"borderTop brython":{
+					"prefix":"bordertop",
+					"body":["borderTop"],
+					"description":"borderTop"},
+				
+				"borderTopColor brython":{
+					"prefix":"bordertopcolor",
+					"body":["borderTopColor"],
+					"description":"borderTopColor"},
+				
+				"borderTopLeftRadius brython":{
+					"prefix":"bordertopleftradius",
+					"body":["borderTopLeftRadius"],
+					"description":"borderTopLeftRadius"},
+				
+				"borderTopRightRadius brython":{
+					"prefix":"bordertoprightradius",
+					"body":["borderTopRightRadius"],
+					"description":"borderTopRightRadius"},
+				
+				"borderTopStyle brython":{
+					"prefix":"bordertopstyle",
+					"body":["borderTopStyle"],
+					"description":"borderTopStyle"},
+				
+				"borderTopWidth brython":{
+					"prefix":"bordertopwidth",
+					"body":["borderTopWidth"],
+					"description":"borderTopWidth"},
+				
+				"borderWidth brython":{
+					"prefix":"borderwidth",
+					"body":["borderWidth"],
+					"description":"borderWidth"},
+				
+				"bottom brython":{
+					"prefix":"bottom",
+					"body":["bottom"],
+					"description":"bottom"},
+				
+				"boxDecorationBreak brython":{
+					"prefix":"boxdecorationbreak",
+					"body":["boxDecorationBreak"],
+					"description":"boxDecorationBreak"},
+				
+				"boxShadow brython":{
+					"prefix":"boxshadow",
+					"body":["boxShadow"],
+					"description":"boxShadow"},
+				
+				"boxSizing brython":{
+					"prefix":"boxsizing",
+					"body":["boxSizing"],
+					"description":"boxSizing"},
+				
+				"captionSide brython":{
+					"prefix":"captionside",
+					"body":["captionSide"],
+					"description":"captionSide"},
+				
+				"clear brython":{
+					"prefix":"clear",
+					"body":["clear"],
+					"description":"clear"},
+				
+				"clip brython":{
+					"prefix":"clip",
+					"body":["clip"],
+					"description":"clip"},
+				
+				"color brython":{
+					"prefix":"color",
+					"body":["color"],
+					"description":"color"},
+				
+				"columnCount brython":{
+					"prefix":"columncount",
+					"body":["columnCount"],
+					"description":"columnCount"},
+				
+				"columnFill brython":{
+					"prefix":"columnfill",
+					"body":["columnFill"],
+					"description":"columnFill"},
+				
+				"columnGap brython":{
+					"prefix":"columngap",
+					"body":["columnGap"],
+					"description":"columnGap"},
+				
+				"columnRule brython":{
+					"prefix":"columnrule",
+					"body":["columnRule"],
+					"description":"columnRule"},
+				
+				"columnRuleColor brython":{
+					"prefix":"columnrulecolor",
+					"body":["columnRuleColor"],
+					"description":"columnRuleColor"},
+				
+				"columnRuleStyle brython":{
+					"prefix":"columnrulestyle",
+					"body":["columnRuleStyle"],
+					"description":"columnRuleStyle"},
+				
+				"columnRuleWidth brython":{
+					"prefix":"columnrulewidth",
+					"body":["columnRuleWidth"],
+					"description":"columnRuleWidth"},
+				
+				"columns brython":{
+					"prefix":"columns",
+					"body":["columns"],
+					"description":"columns"},
+				
+				"columnSpan brython":{
+					"prefix":"columnspan",
+					"body":["columnSpan"],
+					"description":"columnSpan"},
+				
+				"columnWidth brython":{
+					"prefix":"columnwidth",
+					"body":["columnWidth"],
+					"description":"columnWidth"},
+				
+				"content brython":{
+					"prefix":"content",
+					"body":["content"],
+					"description":"content"},
+				
+				"counterIncrement brython":{
+					"prefix":"counterincrement",
+					"body":["counterIncrement"],
+					"description":"counterIncrement"},
+				
+				"counterReset brython":{
+					"prefix":"counterreset",
+					"body":["counterReset"],
+					"description":"counterReset"},
+				
+				"cursor brython":{
+					"prefix":"cursor",
+					"body":["cursor"],
+					"description":"cursor"},
+				
+				"direction brython":{
+					"prefix":"direction",
+					"body":["direction"],
+					"description":"direction"},
+				
+				"display brython":{
+					"prefix":"display",
+					"body":["display"],
+					"description":"display"},
+				
+				"emptyCells brython":{
+					"prefix":"emptycells",
+					"body":["emptyCells"],
+					"description":"emptyCells"},
+				
+				"filter brython":{
+					"prefix":"filter",
+					"body":["filter"],
+					"description":"filter"},
+				
+				"flex brython":{
+					"prefix":"flex",
+					"body":["flex"],
+					"description":"flex"},
+				
+				"flexBasis brython":{
+					"prefix":"flexbasis",
+					"body":["flexBasis"],
+					"description":"flexBasis"},
+				
+				"flexDirection brython":{
+					"prefix":"flexdirection",
+					"body":["flexDirection"],
+					"description":"flexDirection"},
+				
+				"flexFlow brython":{
+					"prefix":"flexflow",
+					"body":["flexFlow"],
+					"description":"flexFlow"},
+				
+				"flexGrow brython":{
+					"prefix":"flexgrow",
+					"body":["flexGrow"],
+					"description":"flexGrow"},
+				
+				"flexShrink brython":{
+					"prefix":"flexshrink",
+					"body":["flexShrink"],
+					"description":"flexShrink"},
+				
+				"flexWrap brython":{
+					"prefix":"flexwrap",
+					"body":["flexWrap"],
+					"description":"flexWrap"},
+				
+				"cssFloat brython":{
+					"prefix":"cssfloat",
+					"body":["cssFloat"],
+					"description":"cssFloat"},
+				
+				"font brython":{
+					"prefix":"font",
+					"body":["font"],
+					"description":"font"},
+				
+				"fontFamily brython":{
+					"prefix":"fontfamily",
+					"body":["fontFamily"],
+					"description":"fontFamily"},
+				
+				"fontSize brython":{
+					"prefix":"fontsize",
+					"body":["fontSize"],
+					"description":"fontSize"},
+				
+				"fontStyle brython":{
+					"prefix":"fontstyle",
+					"body":["fontStyle"],
+					"description":"fontStyle"},
+				
+				"fontVariant brython":{
+					"prefix":"fontvariant",
+					"body":["fontVariant"],
+					"description":"fontVariant"},
+				
+				"fontWeight brython":{
+					"prefix":"fontweight",
+					"body":["fontWeight"],
+					"description":"fontWeight"},
+				
+				"fontSizeAdjust brython":{
+					"prefix":"fontsizeadjust",
+					"body":["fontSizeAdjust"],
+					"description":"fontSizeAdjust"},
+				
+				"fontStretch brython":{
+					"prefix":"fontstretch",
+					"body":["fontStretch"],
+					"description":"fontStretch"},
+				
+				"hangingPunctuation brython":{
+					"prefix":"hangingpunctuation",
+					"body":["hangingPunctuation"],
+					"description":"hangingPunctuation"},
+				
+				"height brython":{
+					"prefix":"height",
+					"body":["height"],
+					"description":"height"},
+				
+				"hyphens brython":{
+					"prefix":"hyphens",
+					"body":["hyphens"],
+					"description":"hyphens"},
+				
+				"icon brython":{
+					"prefix":"icon",
+					"body":["icon"],
+					"description":"icon"},
+				
+				"imageOrientation brython":{
+					"prefix":"imageorientation",
+					"body":["imageOrientation"],
+					"description":"imageOrientation"},
+				
+				"justifyContent brython":{
+					"prefix":"justifycontent",
+					"body":["justifyContent"],
+					"description":"justifyContent"},
+				
+				"left brython":{
+					"prefix":"left",
+					"body":["left"],
+					"description":"left"},
+				
+				"letterSpacing brython":{
+					"prefix":"letterspacing",
+					"body":["letterSpacing"],
+					"description":"letterSpacing"},
+				
+				"lineHeight brython":{
+					"prefix":"lineheight",
+					"body":["lineHeight"],
+					"description":"lineHeight"},
+				
+				"listStyle brython":{
+					"prefix":"liststyle",
+					"body":["listStyle"],
+					"description":"listStyle"},
+				
+				"listStyleImage brython":{
+					"prefix":"liststyleimage",
+					"body":["listStyleImage"],
+					"description":"listStyleImage"},
+				
+				"listStylePosition brython":{
+					"prefix":"liststyleposition",
+					"body":["listStylePosition"],
+					"description":"listStylePosition"},
+				
+				"listStyleType brython":{
+					"prefix":"liststyletype",
+					"body":["listStyleType"],
+					"description":"listStyleType"},
+				
+				"margin brython":{
+					"prefix":"margin",
+					"body":["margin"],
+					"description":"margin"},
+				
+				"marginBottom brython":{
+					"prefix":"marginbottom",
+					"body":["marginBottom"],
+					"description":"marginBottom"},
+				
+				"marginLeft brython":{
+					"prefix":"marginleft",
+					"body":["marginLeft"],
+					"description":"marginLeft"},
+				
+				"marginRight brython":{
+					"prefix":"marginright",
+					"body":["marginRight"],
+					"description":"marginRight"},
+				
+				"marginTop brython":{
+					"prefix":"margintop",
+					"body":["marginTop"],
+					"description":"marginTop"},
+				
+				"maxHeight brython":{
+					"prefix":"maxheight",
+					"body":["maxHeight"],
+					"description":"maxHeight"},
+				
+				"maxWidth brython":{
+					"prefix":"maxwidth",
+					"body":["maxWidth"],
+					"description":"maxWidth"},
+				
+				"minHeight brython":{
+					"prefix":"minheight",
+					"body":["minHeight"],
+					"description":"minHeight"},
+				
+				"minWidth brython":{
+					"prefix":"minwidth",
+					"body":["minWidth"],
+					"description":"minWidth"},
+				
+				"navDown brython":{
+					"prefix":"navdown",
+					"body":["navDown"],
+					"description":"navDown"},
+				
+				"navIndex brython":{
+					"prefix":"navindex",
+					"body":["navIndex"],
+					"description":"navIndex"},
+				
+				"navLeft brython":{
+					"prefix":"navleft",
+					"body":["navLeft"],
+					"description":"navLeft"},
+				
+				"navRight brython":{
+					"prefix":"navright",
+					"body":["navRight"],
+					"description":"navRight"},
+				
+				"navUp brython":{
+					"prefix":"navup",
+					"body":["navUp"],
+					"description":"navUp"},
+				
+				"opacity brython":{
+					"prefix":"opacity",
+					"body":["opacity"],
+					"description":"opacity"},
+				
+				"order brython":{
+					"prefix":"order",
+					"body":["order"],
+					"description":"order"},
+				
+				"orphans brython":{
+					"prefix":"orphans",
+					"body":["orphans"],
+					"description":"orphans"},
+				
+				"outline brython":{
+					"prefix":"outline",
+					"body":["outline"],
+					"description":"outline"},
+				
+				"outlineColor brython":{
+					"prefix":"outlinecolor",
+					"body":["outlineColor"],
+					"description":"outlineColor"},
+				
+				"outlineOffset brython":{
+					"prefix":"outlineoffset",
+					"body":["outlineOffset"],
+					"description":"outlineOffset"},
+				
+				"outlineStyle brython":{
+					"prefix":"outlinestyle",
+					"body":["outlineStyle"],
+					"description":"outlineStyle"},
+				
+				"outlineWidth brython":{
+					"prefix":"outlinewidth",
+					"body":["outlineWidth"],
+					"description":"outlineWidth"},
+				
+				"overflow brython":{
+					"prefix":"overflow",
+					"body":["overflow"],
+					"description":"overflow"},
+				
+				"overflowX brython":{
+					"prefix":"overflowx",
+					"body":["overflowX"],
+					"description":"overflowX"},
+				
+				"overflowY brython":{
+					"prefix":"overflowy",
+					"body":["overflowY"],
+					"description":"overflowY"},
+				
+				"padding brython":{
+					"prefix":"padding",
+					"body":["padding"],
+					"description":"padding"},
+				
+				"paddingBottom brython":{
+					"prefix":"paddingbottom",
+					"body":["paddingBottom"],
+					"description":"paddingBottom"},
+				
+				"paddingLeft brython":{
+					"prefix":"paddingleft",
+					"body":["paddingLeft"],
+					"description":"paddingLeft"},
+				
+				"paddingRight brython":{
+					"prefix":"paddingright",
+					"body":["paddingRight"],
+					"description":"paddingRight"},
+				
+				"paddingTop brython":{
+					"prefix":"paddingtop",
+					"body":["paddingTop"],
+					"description":"paddingTop"},
+				
+				"pageBreakAfter brython":{
+					"prefix":"pagebreakafter",
+					"body":["pageBreakAfter"],
+					"description":"pageBreakAfter"},
+				
+				"pageBreakBefore brython":{
+					"prefix":"pagebreakbefore",
+					"body":["pageBreakBefore"],
+					"description":"pageBreakBefore"},
+				
+				"pageBreakInside brython":{
+					"prefix":"pagebreakinside",
+					"body":["pageBreakInside"],
+					"description":"pageBreakInside"},
+				
+				"perspective brython":{
+					"prefix":"perspective",
+					"body":["perspective"],
+					"description":"perspective"},
+				
+				"perspectiveOrigin brython":{
+					"prefix":"perspectiveorigin",
+					"body":["perspectiveOrigin"],
+					"description":"perspectiveOrigin"},
+				
+				"position brython":{
+					"prefix":"position",
+					"body":["position"],
+					"description":"position"},
+				
+				"quotes brython":{
+					"prefix":"quotes",
+					"body":["quotes"],
+					"description":"quotes"},
+				
+				"resize brython":{
+					"prefix":"resize",
+					"body":["resize"],
+					"description":"resize"},
+				
+				"right brython":{
+					"prefix":"right",
+					"body":["right"],
+					"description":"right"},
+				
+				"tableLayout brython":{
+					"prefix":"tablelayout",
+					"body":["tableLayout"],
+					"description":"tableLayout"},
+				
+				"tabSize brython":{
+					"prefix":"tabsize",
+					"body":["tabSize"],
+					"description":"tabSize"},
+				
+				"textAlign brython":{
+					"prefix":"textalign",
+					"body":["textAlign"],
+					"description":"textAlign"},
+				
+				"textAlignLast brython":{
+					"prefix":"textalignlast",
+					"body":["textAlignLast"],
+					"description":"textAlignLast"},
+				
+				"textDecoration brython":{
+					"prefix":"textdecoration",
+					"body":["textDecoration"],
+					"description":"textDecoration"},
+				
+				"textDecorationColor brython":{
+					"prefix":"textdecorationcolor",
+					"body":["textDecorationColor"],
+					"description":"textDecorationColor"},
+				
+				"textDecorationLine brython":{
+					"prefix":"textdecorationline",
+					"body":["textDecorationLine"],
+					"description":"textDecorationLine"},
+				
+				"textDecorationStyle brython":{
+					"prefix":"textdecorationstyle",
+					"body":["textDecorationStyle"],
+					"description":"textDecorationStyle"},
+				
+				"textIndent brython":{
+					"prefix":"textindent",
+					"body":["textIndent"],
+					"description":"textIndent"},
+				
+				"textJustify brython":{
+					"prefix":"textjustify",
+					"body":["textJustify"],
+					"description":"textJustify"},
+				
+				"textOverflow brython":{
+					"prefix":"textoverflow",
+					"body":["textOverflow"],
+					"description":"textOverflow"},
+				
+				"textShadow brython":{
+					"prefix":"textshadow",
+					"body":["textShadow"],
+					"description":"textShadow"},
+				
+				"textTransform brython":{
+					"prefix":"texttransform",
+					"body":["textTransform"],
+					"description":"textTransform"},
+				
+				"top brython":{
+					"prefix":"top",
+					"body":["top"],
+					"description":"top"},
+				
+				"transform brython":{
+					"prefix":"transform",
+					"body":["transform"],
+					"description":"transform"},
+				
+				"transformOrigin brython":{
+					"prefix":"transformorigin",
+					"body":["transformOrigin"],
+					"description":"transformOrigin"},
+				
+				"transformStyle brython":{
+					"prefix":"transformstyle",
+					"body":["transformStyle"],
+					"description":"transformStyle"},
+				
+				"transition brython":{
+					"prefix":"transition",
+					"body":["transition"],
+					"description":"transition"},
+				
+				"transitionProperty brython":{
+					"prefix":"transitionproperty",
+					"body":["transitionProperty"],
+					"description":"transitionProperty"},
+				
+				"transitionDuration brython":{
+					"prefix":"transitionduration",
+					"body":["transitionDuration"],
+					"description":"transitionDuration"},
+				
+				"transitionTimingFunction brython":{
+					"prefix":"transitiontimingfunction",
+					"body":["transitionTimingFunction"],
+					"description":"transitionTimingFunction"},
+				
+				"transitionDelay brython":{
+					"prefix":"transitiondelay",
+					"body":["transitionDelay"],
+					"description":"transitionDelay"},
+				
+				"unicodeBidi brython":{
+					"prefix":"unicodebidi",
+					"body":["unicodeBidi"],
+					"description":"unicodeBidi"},
+				
+				"userSelect brython":{
+					"prefix":"userselect",
+					"body":["userSelect"],
+					"description":"userSelect"},
+				
+				"verticalAlign brython":{
+					"prefix":"verticalalign",
+					"body":["verticalAlign"],
+					"description":"verticalAlign"},
+				
+				"visibility brython":{
+					"prefix":"visibility",
+					"body":["visibility"],
+					"description":"visibility"},
+				
+				"whiteSpace brython":{
+					"prefix":"whitespace",
+					"body":["whiteSpace"],
+					"description":"whiteSpace"},
+				
+				"width brython":{
+					"prefix":"width",
+					"body":["width"],
+					"description":"width"},
+				
+				"wordBreak brython":{
+					"prefix":"wordbreak",
+					"body":["wordBreak"],
+					"description":"wordBreak"},
+				
+				"wordSpacing brython":{
+					"prefix":"wordspacing",
+					"body":["wordSpacing"],
+					"description":"wordSpacing"},
+				
+				"wordWrap brython":{
+					"prefix":"wordwrap",
+					"body":["wordWrap"],
+					"description":"wordWrap"},
+				
+				"widows brython":{
+					"prefix":"widows",
+					"body":["widows"],
+					"description":"widows"},
+				
+				"zIndex brython":{
+					"prefix":"zindex",
+					"body":["zIndex"],
+					"description":"zIndex"},
+	
+				"maketag brython":{
+					"prefix":"maketag",
+					"body":["maketag('name')"],
+					"description":"brython maketag"},
+				
+				"storage brython":{
+					"prefix":"storage",
+					"body":["storage['']"],
+					"description":"brython storage"},		
+					
+								
+				
+				"del storage brython":{
+					"prefix":"del storage",
+					"body":["del storage['']"],
+					"description":"brython del storage"},
+	
+				"mark brython":{
+					"prefix":"mark",
+					"body":["mark(src)"],
+					"description":"brython mark"},
+					
+				"object storage brython":{
+					"prefix":"objectstorage",
+					"body":["ObjectStorage(storage)"],
+					"description":"brython object storage"},			
+						
+			
+				
+				"Template brython":{
+					"prefix":"Template()",
+					"body":["Template(document['']).render(name='')"],
+					"description":"brython template"},	
+	
+				
+				"setTimeout brython":{
+						"prefix":"settimeout",
+						"body":["set_timeout(function,ms)"],
+						"description":"brython setimeout"},
+				
+				"clearTimeout brython":{
+							"prefix":"cleartimeout",
+							"body":["clear_timeout(timer)"],
+							"description":"brython cleartimeout "},	
+				
+				"setinterval brython":{
+								"prefix":"setinterval",
+								"body":["set_interval(fonction, ms)"],
+								"description":"brython setinterval "},	
+	
+				"clear interval brython":{
+								"prefix":"clearinterval",
+								"body":["clear_interval(timer)"],
+								"description":"brython clear "},	
+									
+													
+				"request animation brython":{
+						"prefix":"requestanimationframe",
+						"body":["request_animation_frame(function)"],
+						"description":"brython request animation "},
+			
+				"cancel animation brython":{
+						"prefix":"cancelanimationframe",
+						"body":["cancel_animation_frame(id)"],
+						"description":"brython cancel animation "},		
+						
+				"supported brython":{
+					"prefix":"supported",
+					"body":["supported"],
+					"description":"brython supported "},	
+					
+				"WebSocket() brython":{
+					"prefix":"websocket()",
+					"body":["WebSocket(hote)"],
+					"description":"brython WebSocket() "},		
+				
+				"close() brython":{
+						"prefix":"close()",
+						"body":["close()"],
+						"description":"brython close() "},
+	
+				"WorkerParent brython":{
+					"prefix":"workerparent()",
+					"body":["WorkerParent()"],
+					"description":"brython WorkerParent() "},
+	
+					"message brython":{
+						"prefix":"message()",
+						"body":["Message()"],
+						"description":"brython Message() "},
+						
+				  "register_method() brython":{
+							"prefix":"registermethod()",
+							"body":["register_method()"],
+							"description":"brython register_method()"},	
+				
+					"post_message() brython":{
+						"prefix":"postmessage()",
+						"body":["post_message(message, want_reply=False, timeout=None)"],
+						"description":"brython postmessage()"},		
+					
+					"post_reply brython":{
+							"prefix":"postreply()",
+							"body":["post_reply(message, reply)"],
+							"description":"brython post_reply()"},	
+	
+					"RPCWorkerParent brython":{
+								"prefix":"rpcworkerparent()",
+								"body":["RPCWorkerParent()"],
+								"description":"brython RPCWorkerParent"},	
+					
+								
+					"terminate brython":{
+									"prefix":"terminate()",
+									"body":["terminate()"],
+									"description":"brython terminate"},		
+					
+				
+									
+					"exec brython":{
+							"prefix":"exec()",
+							"body":["exec()"],
+							"description":"brython exec"},
+			
+							"options brython":{
+								"prefix":"options",
+								"body":["options"],
+								"description":"options"},
+								
+							"disabled brython":{
+								"prefix":"disabled",
+								"body":["disabled"],
+								"description":"disabled"},
+								
+							"form brython":{
+								"prefix":"form",
+								"body":["form"],
+								"description":"form"},
+								
+							"length brython":{
+								"prefix":"length",
+								"body":["length"],
+								"description":"length"},
+								
+							"multiple brython":{
+								"prefix":"multiple",
+								"body":["multiple"],
+								"description":"multiple"},
+								
+							"name brython":{
+								"prefix":"name",
+								"body":["name"],
+								"description":"name"},
+								
+							"selectedIndex brython":{
+								"prefix":"selectedindex",
+								"body":["selectedIndex"],
+								"description":"selectedIndex"},
+								
+							"size brython":{
+								"prefix":"size",
+								"body":["size"],
+								"description":"size"},
+								
+							"type brython":{
+								"prefix":"type",
+								"body":["type"],
+								"description":"type"},
+								
+							"value brython":{
+								"prefix":"value",
+								"body":["value"],
+								"description":"value"},
+	
+	
+							"attributs brython":{
+								"prefix":"attributes",
+								"body":["attributes.${1|isId,name,value,specified,getNamedItem(),item(),length,removeNamedItem(),setNamedItem()|}"],
+								"description":"brython attributes"},
+	
+						
+								"document.activeElement brython":{
+									"prefix":"document.activeelement",
+									"body":["document.activeElement"],
+									"description":"document.activeElement"},
+									
+								"document.addEventListener() brython":{
+									"prefix":"document.addeventlistener()",
+									"body":["document.addEventListener()"],
+									"description":"document.addEventListener()"},
+									
+								"document.adoptNode() brython":{
+									"prefix":"document.adoptnode()",
+									"body":["document.adoptNode()"],
+									"description":"document.adoptNode()"},
+									
+								"document.anchors brython":{
+									"prefix":"document.anchors",
+									"body":["document.anchors"],
+									"description":"document.anchors"},
+									
+								"document.applets brython":{
+									"prefix":"document.applets",
+									"body":["document.applets"],
+									"description":"document.applets"},
+									
+								"document.baseURI brython":{
+									"prefix":"document.baseuri",
+									"body":["document.baseURI"],
+									"description":"document.baseURI"},
+									
+								"document.body brython":{
+									"prefix":"document.body",
+									"body":["document.body"],
+										"description":"document.body"},
+									
+							
+								"document.cookie brython":{
+									"prefix":"document.cookie",
+									"body":["document.cookie"],
+									"description":"document.cookie"},
+									
+								"document.charset brython":{
+									"prefix":"document.charset",
+									"body":["document.charset"],
+									"description":"document.charset"},
+									
+								"document.characterSet brython":{
+									"prefix":"document.characterset",
+									"body":["document.characterSet"],
+									"description":"document.characterSet"},
+									
+								"document.createAttribute() brython":{
+									"prefix":"document.createattribute()",
+									"body":["document.createAttribute()"],
+									"description":"document.createAttribute()"},
+									
+								"document.createComment() brython":{
+									"prefix":"document.createcomment()",
+									"body":["document.createComment()"],
+									"description":"document.createComment()"},
+									
+								"document.createragment() brython":{
+									"prefix":"document.createragment()",
+									"body":["document.createragment()"],
+									"description":"document.createragment()"},
+									
+								"document.createElement() brython":{
+									"prefix":"document.createelement()",
+									"body":["document.createElement()"],
+									"description":"document.createElement()"},
+									
+								"document.createTextNode() brython":{
+									"prefix":"document.createtextnode()",
+									"body":["document.createTextNode()"],
+									"description":"document.createTextNode()"},
+									
+								"document.defaultView brython":{
+									"prefix":"document.defaultview",
+									"body":["document.defaultView"],
+									"description":"document.defaultView"},
+									
+								"document.designMode brython":{
+									"prefix":"document.designmode",
+									"body":["document.designMode"],
+									"description":"document.designMode"},
+									
+								"document.doctype brython":{
+									"prefix":"document.doctype",
+									"body":["document.doctype"],
+									"description":"document.doctype"},
+									
+								"document.lement brython":{
+									"prefix":"document.lement",
+									"body":["document.lement"],
+									"description":"document.lement"},
+									
+								"document.ode brython":{
+									"prefix":"document.ode",
+									"body":["document.ode"],
+									"description":"document.ode"},
+									
+								"document.RI brython":{
+									"prefix":"document.ri",
+									"body":["document.RI"],
+									"description":"document.RI"},
+									
+								"document.domain brython":{
+									"prefix":"document.domain",
+									"body":["document.domain"],
+									"description":"document.domain"},
+									
+								"document.domConfig brython":{
+									"prefix":"document.domconfig",
+									"body":["document.domConfig"],
+									"description":"document.domConfig"},
+									
+								"document.embeds brython":{
+									"prefix":"document.embeds",
+									"body":["document.embeds"],
+									"description":"document.embeds"},
+									
+								"document.execCommand() brython":{
+									"prefix":"document.execcommand()",
+									"body":["document.execCommand()"],
+									"description":"document.execCommand()"},
+									
+								"document.forms brython":{
+									"prefix":"document.forms",
+									"body":["document.forms"],
+									"description":"document.forms"},
+									
+								"document.getElementById() brython":{
+									"prefix":"document.getelementbyid()",
+									"body":["document.getElementById()"],
+									"description":"document.getElementById()"},
+									
+								"document.getElementsByClassName() brython":{
+									"prefix":"document.getelementsbyclassname()",
+									"body":["document.getElementsByClassName()"],
+									"description":"document.getElementsByClassName()"},
+									
+								"document.getElementsByName() brython":{
+									"prefix":"document.getelementsbyname()",
+									"body":["document.getElementsByName()"],
+									"description":"document.getElementsByName()"},
+									
+								"document.getElementsByTagName() brython":{
+									"prefix":"document.getelementsbytagname()",
+									"body":["document.getElementsByTagName()"],
+									"description":"document.getElementsByTagName()"},
+									
+								"document.hasFocus() brython":{
+									"prefix":"document.hasfocus()",
+									"body":["document.hasFocus()"],
+									"description":"document.hasFocus()"},
+									
+								"document.head brython":{
+									"prefix":"document.head",
+									"body":["document.head"],
+									"description":"document.head"},
+									
+								"document.images brython":{
+									"prefix":"document.images",
+									"body":["document.images"],
+									"description":"document.images"},
+									
+								"document.implementation brython":{
+									"prefix":"document.implementation",
+									"body":["document.implementation"],
+									"description":"document.implementation"},
+									
+								"document.importNode() brython":{
+									"prefix":"document.importnode()",
+									"body":["document.importNode()"],
+									"description":"document.importNode()"},
+									
+								"document.inputEncoding brython":{
+									"prefix":"document.inputencoding",
+									"body":["document.inputEncoding"],
+									"description":"document.inputEncoding"},
+									
+								"document.lastModified brython":{
+									"prefix":"document.lastmodified",
+									"body":["document.lastModified"],
+									"description":"document.lastModified"},
+									
+								"document.links brython":{
+									"prefix":"document.links",
+									"body":["document.links"],
+									"description":"document.links"},
+									
+								"document.normalize() brython":{
+									"prefix":"document.normalize()",
+									"body":["document.normalize()"],
+									"description":"document.normalize()"},
+									
+								"document.open() brython":{
+									"prefix":"document.open()",
+									"body":["document.open()"],
+									"description":"document.open()"},
+									
+								"document.querySelector() brython":{
+									"prefix":"document.queryselector()",
+									"body":["document.querySelector()"],
+									"description":"document.querySelector()"},
+									
+								"document.querySelectorAll() brython":{
+									"prefix":"document.queryselectorall()",
+									"body":["document.querySelectorAll()"],
+									"description":"document.querySelectorAll()"},
+									
+								"document.readyState brython":{
+									"prefix":"document.readystate",
+									"body":["document.readyState"],
+									"description":"document.readyState"},
+									
+								"document.referrer brython":{
+									"prefix":"document.referrer",
+									"body":["document.referrer"],
+									"description":"document.referrer"},
+									
+								"document.removeEventListener() brython":{
+									"prefix":"document.removeeventlistener()",
+									"body":["document.removeEventListener()"],
+									"description":"document.removeEventListener()"},
+									
+								"document.renameNode() brython":{
+									"prefix":"document.renamenode()",
+									"body":["document.renameNode()"],
+									"description":"document.renameNode()"},
+									
+								"document.scripts brython":{
+									"prefix":"document.scripts",
+									"body":["document.scripts"],
+									"description":"document.scripts"},
+									
+								"document.strictErrorChecking brython":{
+									"prefix":"document.stricterrorchecking",
+									"body":["document.strictErrorChecking"],
+									"description":"document.strictErrorChecking"},
+									
+								"document.title brython":{
+									"prefix":"document.title",
+									"body":["document.title"],
+									"description":"document.title"},
+									
+								"document.URL brython":{
+									"prefix":"document.url",
+									"body":["document.URL"],
+									"description":"document.URL"},
+									
+								"document.write() brython":{
+									"prefix":"document.write()",
+									"body":["document.write()"],
+									"description":"document.write()"},
+									
+								"document.writeln() brython":{
+									"prefix":"document.writeln()",
+									"body":["document.writeln()"],
+									"description":"document.writeln()"},
+	
+									"accessKey brython":{
+										"prefix":"accesskey",
+										"body":["accessKey"],
+										"description":"accessKey"},
+										
+									"addEventListener() brython":{
+										"prefix":"addeventlistener()",
+										"body":["addEventListener()"],
+										"description":"addEventListener()"},
+										
+									"appendChild() brython":{
+										"prefix":"appendchild()",
+										"body":["appendChild()"],
+										"description":"appendChild()"},
+										
+									"attributes brython":{
+										"prefix":"attributes",
+										"body":["attributes"],
+										"description":"attributes"},
+										
+									"blur() brython":{
+										"prefix":"blur()",
+										"body":["blur()"],
+										"description":"blur()"},
+										
+									"childount brython":{
+										"prefix":"childount",
+										"body":["childount"],
+										"description":"childount"},
+										
+									"childNodes brython":{
+										"prefix":"childnodes",
+										"body":["childNodes"],
+										"description":"childNodes"},
+										
+									"children brython":{
+										"prefix":"children",
+										"body":["children"],
+										"description":"children"},
+										
+									"classList brython":{
+										"prefix":"classlist",
+										"body":["classList"],
+										"description":"classList"},
+										
+									"className brython":{
+										"prefix":"classname",
+										"body":["className"],
+										"description":"className"},
+										
+									"click() brython":{
+										"prefix":"click()",
+										"body":["click()"],
+										"description":"click()"},
+										
+									"clientHeight brython":{
+										"prefix":"clientheight",
+										"body":["clientHeight"],
+										"description":"clientHeight"},
+										
+									"clientLeft brython":{
+										"prefix":"clientleft",
+										"body":["clientLeft"],
+										"description":"clientLeft"},
+										
+									"clientTop brython":{
+										"prefix":"clienttop",
+										"body":["clientTop"],
+										"description":"clientTop"},
+										
+									"clientWidth brython":{
+										"prefix":"clientwidth",
+										"body":["clientWidth"],
+										"description":"clientWidth"},
+										
+									"cloneNode() brython":{
+										"prefix":"clonenode()",
+										"body":["cloneNode()"],
+										"description":"cloneNode()"},
+										
+									"compareDocumentPosition() brython":{
+										"prefix":"comparedocumentposition()",
+										"body":["compareDocumentPosition()"],
+										"description":"compareDocumentPosition()"},
+										
+									"contains() brython":{
+										"prefix":"contains()",
+										"body":["contains()"],
+										"description":"contains()"},
+										
+									"contentEditable brython":{
+										"prefix":"contenteditable",
+										"body":["contentEditable"],
+										"description":"contentEditable"},
+										
+									"dir brython":{
+										"prefix":"dir",
+										"body":["dir"],
+										"description":"dir"},
+										
+									"firstChild brython":{
+										"prefix":"firstchild",
+										"body":["firstChild"],
+										"description":"firstChild"},
+										
+									"firsthild brython":{
+										"prefix":"firsthild",
+										"body":["firsthild"],
+										"description":"firsthild"},
+										
+									"focus() brython":{
+										"prefix":"focus()",
+										"body":["focus()"],
+										"description":"focus()"},
+										
+									"getAttribute() brython":{
+										"prefix":"getattribute()",
+										"body":["getAttribute()"],
+										"description":"getAttribute()"},
+										
+									"getAttributeNode() brython":{
+										"prefix":"getattributenode()",
+										"body":["getAttributeNode()"],
+										"description":"getAttributeNode()"},
+										
+									"getByClassName() brython":{
+										"prefix":"getbyclassname()",
+										"body":["getByClassName()"],
+										"description":"getByClassName()"},
+										
+									"getByTagName() brython":{
+										"prefix":"getbytagname()",
+										"body":["getByTagName()"],
+										"description":"getByTagName()"},
+										
+									"getFeature() brython":{
+										"prefix":"getfeature()",
+										"body":["getFeature()"],
+										"description":"getFeature()"},
+										
+									"hasAttribute() brython":{
+										"prefix":"hasattribute()",
+										"body":["hasAttribute()"],
+										"description":"hasAttribute()"},
+										
+									"hasAttributes() brython":{
+										"prefix":"hasattributes()",
+										"body":["hasAttributes()"],
+										"description":"hasAttributes()"},
+										
+									"hasChildNodes() brython":{
+										"prefix":"haschildnodes()",
+										"body":["hasChildNodes()"],
+										"description":"hasChildNodes()"},
+										
+									"id brython":{
+										"prefix":"id",
+										"body":["id"],
+										"description":"id"},
+										
+									"innerHTML brython":{
+										"prefix":"innerhtml",
+										"body":["innerHTML"],
+										"description":"innerHTML"},
+										
+									"insertBefore() brython":{
+										"prefix":"insertbefore()",
+										"body":["insertBefore()"],
+										"description":"insertBefore()"},
+										
+									"isContentEditable brython":{
+										"prefix":"iscontenteditable",
+										"body":["isContentEditable"],
+										"description":"isContentEditable"},
+										
+									"isDefaultNamespace() brython":{
+										"prefix":"isdefaultnamespace()",
+										"body":["isDefaultNamespace()"],
+										"description":"isDefaultNamespace()"},
+										
+									"isEqualNode() brython":{
+										"prefix":"isequalnode()",
+										"body":["isEqualNode()"],
+										"description":"isEqualNode()"},
+										
+									"isSameNode() brython":{
+										"prefix":"issamenode()",
+										"body":["isSameNode()"],
+										"description":"isSameNode()"},
+										
+									"isSupported() brython":{
+										"prefix":"issupported()",
+										"body":["isSupported()"],
+										"description":"isSupported()"},
+										
+									"lang brython":{
+										"prefix":"lang",
+										"body":["lang"],
+										"description":"lang"},
+										
+									"lastChild brython":{
+										"prefix":"lastchild",
+										"body":["lastChild"],
+										"description":"lastChild"},
+										
+									"lasthild brython":{
+										"prefix":"lasthild",
+										"body":["lasthild"],
+										"description":"lasthild"},
+										
+									"namespaceURI brython":{
+										"prefix":"namespaceuri",
+										"body":["namespaceURI"],
+										"description":"namespaceURI"},
+										
+									"nextSibling brython":{
+										"prefix":"nextsibling",
+										"body":["nextSibling"],
+										"description":"nextSibling"},
+										
+									"nextibling brython":{
+										"prefix":"nextibling",
+										"body":["nextibling"],
+										"description":"nextibling"},
+										
+									"nodeName brython":{
+										"prefix":"nodename",
+										"body":["nodeName"],
+										"description":"nodeName"},
+										
+									"nodeType brython":{
+										"prefix":"nodetype",
+										"body":["nodeType"],
+										"description":"nodeType"},
+										
+									"nodeValue brython":{
+										"prefix":"nodevalue",
+										"body":["nodeValue"],
+										"description":"nodeValue"},
+										
+									"normalize() brython":{
+										"prefix":"normalize()",
+										"body":["normalize()"],
+										"description":"normalize()"},
+										
+									"offsetHeight brython":{
+										"prefix":"offsetheight",
+										"body":["offsetHeight"],
+										"description":"offsetHeight"},
+										
+									"offsetWidth brython":{
+										"prefix":"offsetwidth",
+										"body":["offsetWidth"],
+										"description":"offsetWidth"},
+										
+									"offsetLeft brython":{
+										"prefix":"offsetleft",
+										"body":["offsetLeft"],
+										"description":"offsetLeft"},
+										
+									"offsetParent brython":{
+										"prefix":"offsetparent",
+										"body":["offsetParent"],
+										"description":"offsetParent"},
+										
+									"offsetTop brython":{
+										"prefix":"offsettop",
+										"body":["offsetTop"],
+										"description":"offsetTop"},
+										
+									"ownerDocument brython":{
+										"prefix":"ownerdocument",
+										"body":["ownerDocument"],
+										"description":"ownerDocument"},
+										
+									"parentNode brython":{
+										"prefix":"parentnode",
+										"body":["parentNode"],
+										"description":"parentNode"},
+										
+									"parentpreviousSibling brython":{
+										"prefix":"parentprevioussibling",
+										"body":["parentpreviousSibling"],
+										"description":"parentpreviousSibling"},
+										
+									"previousibling brython":{
+										"prefix":"previousibling",
+										"body":["previousibling"],
+										"description":"previousibling"},
+										
+									"querySelector() brython":{
+										"prefix":"queryselector()",
+										"body":["querySelector()"],
+										"description":"querySelector()"},
+										
+									"querySelectorAll() brython":{
+										"prefix":"queryselectorall()",
+										"body":["querySelectorAll()"],
+										"description":"querySelectorAll()"},
+										
+									"removeAttribute() brython":{
+										"prefix":"removeattribute()",
+										"body":["removeAttribute()"],
+										"description":"removeAttribute()"},
+										
+									"removeAttributeNode() brython":{
+										"prefix":"removeattributenode()",
+										"body":["removeAttributeNode()"],
+										"description":"removeAttributeNode()"},
+										
+									"removeChild() brython":{
+										"prefix":"removechild()",
+										"body":["removeChild()"],
+										"description":"removeChild()"},
+										
+									"removeEventListener() brython":{
+										"prefix":"removeeventlistener()",
+										"body":["removeEventListener()"],
+										"description":"removeEventListener()"},
+										
+									"replaceChild() brython":{
+										"prefix":"replacechild()",
+										"body":["replaceChild()"],
+										"description":"replaceChild()"},
+										
+									"scrollHeight brython":{
+										"prefix":"scrollheight",
+										"body":["scrollHeight"],
+										"description":"scrollHeight"},
+										
+									"scrollIntoView() brython":{
+										"prefix":"scrollintoview()",
+										"body":["scrollIntoView()"],
+										"description":"scrollIntoView()"},
+										
+									"scrollLeft brython":{
+										"prefix":"scrollleft",
+										"body":["scrollLeft"],
+										"description":"scrollLeft"},
+										
+									"scrollTop brython":{
+										"prefix":"scrolltop",
+										"body":["scrollTop"],
+										"description":"scrollTop"},
+										
+									"scrollWidth brython":{
+										"prefix":"scrollwidth",
+										"body":["scrollWidth"],
+										"description":"scrollWidth"},
+										
+									"setAttribute() brython":{
+										"prefix":"setattribute()",
+										"body":["setAttribute()"],
+										"description":"setAttribute()"},
+										
+									"setAttributeNode() brython":{
+										"prefix":"setattributenode()",
+										"body":["setAttributeNode()"],
+										"description":"setAttributeNode()"},
+										
+									"style brython":{
+										"prefix":"style",
+										"body":["style"],
+										"description":"style"},
+										
+									"tabIndex brython":{
+										"prefix":"tabindex",
+										"body":["tabIndex"],
+										"description":"tabIndex"},
+										
+									"tagName brython":{
+										"prefix":"tagname",
+										"body":["tagName"],
+										"description":"tagName"},
+										
+									"textContent brython":{
+										"prefix":"textcontent",
+										"body":["textContent"],
+										"description":"textContent"},
+										
+									"title brython":{
+										"prefix":"title",
+										"body":["title"],
+										"description":"title"},
+										
+									"toString() brython":{
+										"prefix":"tostring()",
+										"body":["toString()"],
+										"description":"toString()"},
+					
+										"onclick brython":{
+											"prefix":"onclick",
+											"body":["onclick"],
+											"description":"onclick"},
+											
+										"oncontextmenu brython":{
+											"prefix":"oncontextmenu",
+											"body":["oncontextmenu"],
+											"description":"oncontextmenu"},
+											
+										"ondblclick brython":{
+											"prefix":"ondblclick",
+											"body":["ondblclick"],
+											"description":"ondblclick"},
+											
+										"onmousedown brython":{
+											"prefix":"onmousedown",
+											"body":["onmousedown"],
+											"description":"onmousedown"},
+											
+										"onmouseenter brython":{
+											"prefix":"onmouseenter",
+											"body":["onmouseenter"],
+											"description":"onmouseenter"},
+											
+										"onmouseleave brython":{
+											"prefix":"onmouseleave",
+											"body":["onmouseleave"],
+											"description":"onmouseleave"},
+											
+										"onmousemove brython":{
+											"prefix":"onmousemove",
+											"body":["onmousemove"],
+											"description":"onmousemove"},
+											
+										"onmouseover brython":{
+											"prefix":"onmouseover",
+											"body":["onmouseover"],
+											"description":"onmouseover"},
+											
+										"onmouseout brython":{
+											"prefix":"onmouseout",
+											"body":["onmouseout"],
+											"description":"onmouseout"},
+											
+										"onmouseup brython":{
+											"prefix":"onmouseup",
+											"body":["onmouseup"],
+											"description":"onmouseup"},
+											
+										"onkeydown brython":{
+											"prefix":"onkeydown",
+											"body":["onkeydown"],
+											"description":"onkeydown"},
+											
+										"onkeypress brython":{
+											"prefix":"onkeypress",
+											"body":["onkeypress"],
+											"description":"onkeypress"},
+											
+										"onkeyup brython":{
+											"prefix":"onkeyup",
+											"body":["onkeyup"],
+											"description":"onkeyup"},
+											
+										"onabort brython":{
+											"prefix":"onabort",
+											"body":["onabort"],
+											"description":"onabort"},
+											
+										"onbeforeunload brython":{
+											"prefix":"onbeforeunload",
+											"body":["onbeforeunload"],
+											"description":"onbeforeunload"},
+											
+										"onerror brython":{
+											"prefix":"onerror",
+											"body":["onerror"],
+											"description":"onerror"},
+											
+										"onhashchange brython":{
+											"prefix":"onhashchange",
+											"body":["onhashchange"],
+											"description":"onhashchange"},
+											
+										"onload brython":{
+											"prefix":"onload",
+											"body":["onload"],
+											"description":"onload"},
+											
+										"onpageshow brython":{
+											"prefix":"onpageshow",
+											"body":["onpageshow"],
+											"description":"onpageshow"},
+											
+										"onpagehide brython":{
+											"prefix":"onpagehide",
+											"body":["onpagehide"],
+											"description":"onpagehide"},
+											
+										"onresize brython":{
+											"prefix":"onresize",
+											"body":["onresize"],
+											"description":"onresize"},
+											
+										"onscroll brython":{
+											"prefix":"onscroll",
+											"body":["onscroll"],
+											"description":"onscroll"},
+											
+										"onunload brython":{
+											"prefix":"onunload",
+											"body":["onunload"],
+											"description":"onunload"},
+											
+										"onblur brython":{
+											"prefix":"onblur",
+											"body":["onblur"],
+											"description":"onblur"},
+											
+										"onchange brython":{
+											"prefix":"onchange",
+											"body":["onchange"],
+											"description":"onchange"},
+											
+										"onfocus brython":{
+											"prefix":"onfocus",
+											"body":["onfocus"],
+											"description":"onfocus"},
+											
+										"onfocusin brython":{
+											"prefix":"onfocusin",
+											"body":["onfocusin"],
+											"description":"onfocusin"},
+											
+										"onfocusout brython":{
+											"prefix":"onfocusout",
+											"body":["onfocusout"],
+											"description":"onfocusout"},
+											
+										"oninput brython":{
+											"prefix":"oninput",
+											"body":["oninput"],
+											"description":"oninput"},
+											
+										"oninvalid brython":{
+											"prefix":"oninvalid",
+											"body":["oninvalid"],
+											"description":"oninvalid"},
+											
+										"onreset brython":{
+											"prefix":"onreset",
+											"body":["onreset"],
+											"description":"onreset"},
+											
+										"onsearch brython":{
+											"prefix":"onsearch",
+											"body":["onsearch"],
+											"description":"onsearch"},
+											
+										"onselect brython":{
+											"prefix":"onselect",
+											"body":["onselect"],
+											"description":"onselect"},
+											
+										"onsubmit brython":{
+											"prefix":"onsubmit",
+											"body":["onsubmit"],
+											"description":"onsubmit"},
+											
+										"ondrag brython":{
+											"prefix":"ondrag",
+											"body":["ondrag"],
+											"description":"ondrag"},
+											
+										"ondragend brython":{
+											"prefix":"ondragend",
+											"body":["ondragend"],
+											"description":"ondragend"},
+											
+										"ondragenter brython":{
+											"prefix":"ondragenter",
+											"body":["ondragenter"],
+											"description":"ondragenter"},
+											
+										"ondragleave brython":{
+											"prefix":"ondragleave",
+											"body":["ondragleave"],
+											"description":"ondragleave"},
+											
+										"ondragover brython":{
+											"prefix":"ondragover",
+											"body":["ondragover"],
+											"description":"ondragover"},
+											
+										"ondragstart brython":{
+											"prefix":"ondragstart",
+											"body":["ondragstart"],
+											"description":"ondragstart"},
+											
+										"ondrop brython":{
+											"prefix":"ondrop",
+											"body":["ondrop"],
+											"description":"ondrop"},
+											
+										"oncopy brython":{
+											"prefix":"oncopy",
+											"body":["oncopy"],
+											"description":"oncopy"},
+											
+										"oncut brython":{
+											"prefix":"oncut",
+											"body":["oncut"],
+											"description":"oncut"},
+											
+										"onpaste brython":{
+											"prefix":"onpaste",
+											"body":["onpaste"],
+											"description":"onpaste"},
+											
+										"onafterprint brython":{
+											"prefix":"onafterprint",
+											"body":["onafterprint"],
+											"description":"onafterprint"},
+											
+										"onbeforeprint brython":{
+											"prefix":"onbeforeprint",
+											"body":["onbeforeprint"],
+											"description":"onbeforeprint"},
+											
+											
+										"oncanplay brython":{
+											"prefix":"oncanplay",
+											"body":["oncanplay"],
+											"description":"oncanplay"},
+											
+										"oncanplaythrough brython":{
+											"prefix":"oncanplaythrough",
+											"body":["oncanplaythrough"],
+											"description":"oncanplaythrough"},
+											
+										"ondurationchange brython":{
+											"prefix":"ondurationchange",
+											"body":["ondurationchange"],
+											"description":"ondurationchange"},
+											
+										"onemptied brython":{
+											"prefix":"onemptied",
+											"body":["onemptied"],
+											"description":"onemptied"},
+											
+										"onended brython":{
+											"prefix":"onended",
+											"body":["onended"],
+											"description":"onended"},
+											
+											
+										"onloadeddata brython":{
+											"prefix":"onloadeddata",
+											"body":["onloadeddata"],
+											"description":"onloadeddata"},
+											
+										"onloadedmetadata brython":{
+											"prefix":"onloadedmetadata",
+											"body":["onloadedmetadata"],
+											"description":"onloadedmetadata"},
+											
+										"onloadstart brython":{
+											"prefix":"onloadstart",
+											"body":["onloadstart"],
+											"description":"onloadstart"},
+											
+										"onpause brython":{
+											"prefix":"onpause",
+											"body":["onpause"],
+											"description":"onpause"},
+											
+										"onplay brython":{
+											"prefix":"onplay",
+											"body":["onplay"],
+											"description":"onplay"},
+											
+										"onplaying brython":{
+											"prefix":"onplaying",
+											"body":["onplaying"],
+											"description":"onplaying"},
+											
+										"onprogress brython":{
+											"prefix":"onprogress",
+											"body":["onprogress"],
+											"description":"onprogress"},
+											
+										"onratechange brython":{
+											"prefix":"onratechange",
+											"body":["onratechange"],
+											"description":"onratechange"},
+											
+										"onseeked brython":{
+											"prefix":"onseeked",
+											"body":["onseeked"],
+											"description":"onseeked"},
+											
+										"onseeking brython":{
+											"prefix":"onseeking",
+											"body":["onseeking"],
+											"description":"onseeking"},
+											
+										"onstalled brython":{
+											"prefix":"onstalled",
+											"body":["onstalled"],
+											"description":"onstalled"},
+											
+										"onsuspend brython":{
+											"prefix":"onsuspend",
+											"body":["onsuspend"],
+											"description":"onsuspend"},
+											
+										"ontimeupdate brython":{
+											"prefix":"ontimeupdate",
+											"body":["ontimeupdate"],
+											"description":"ontimeupdate"},
+											
+										"onvolumechange brython":{
+											"prefix":"onvolumechange",
+											"body":["onvolumechange"],
+											"description":"onvolumechange"},
+											
+										"onwaiting brython":{
+											"prefix":"onwaiting",
+											"body":["onwaiting"],
+											"description":"onwaiting"},
+											
+										"onmessage brython":{
+											"prefix":"onmessage",
+											"body":["onmessage"],
+											"description":"onmessage"},
+											
+										"onopen brython":{
+											"prefix":"onopen",
+											"body":["onopen"],
+											"description":"onopen"},
+											
+											
+										"onmousewheel brython":{
+											"prefix":"onmousewheel",
+											"body":["onmousewheel"],
+											"description":"onmousewheel"},
+											
+										"ononline brython":{
+											"prefix":"ononline",
+											"body":["ononline"],
+											"description":"ononline"},
+											
+										"onoffline brython":{
+											"prefix":"onoffline",
+											"body":["onoffline"],
+											"description":"onoffline"},
+											
+										"onpopstate brython":{
+											"prefix":"onpopstate",
+											"body":["onpopstate"],
+											"description":"onpopstate"},
+											
+										"onshow brython":{
+											"prefix":"onshow",
+											"body":["onshow"],
+											"description":"onshow"},
+											
+										"onstorage brython":{
+											"prefix":"onstorage",
+											"body":["onstorage"],
+											"description":"onstorage"},
+											
+										"ontoggle brython":{
+											"prefix":"ontoggle",
+											"body":["ontoggle"],
+											"description":"ontoggle"},
+											
+										"onwheel brython":{
+											"prefix":"onwheel",
+											"body":["onwheel"],
+											"description":"onwheel"},
+											
+										"ontouchcancel brython":{
+											"prefix":"ontouchcancel",
+											"body":["ontouchcancel"],
+											"description":"ontouchcancel"},
+											
+										"ontouchend brython":{
+											"prefix":"ontouchend",
+											"body":["ontouchend"],
+											"description":"ontouchend"},
+											
+										"ontouchmove brython":{
+											"prefix":"ontouchmove",
+											"body":["ontouchmove"],
+											"description":"ontouchmove"},
+											
+										"ontouchstart brython":{
+											"prefix":"ontouchstart",
+											"body":["ontouchstart"],
+											"description":"ontouchstart"},
+										
+											
+											"history length brython":{
+												"prefix":"history.length",
+												"body":["history.length"],
+												"description":"history.length"},
+	
+											"history back() brython":{
+												"prefix":"history.back()",
+												"body":["history.back()"],
+												"description":"history.back()"},
+	
+									
+												"history forward() brython":{
+													"prefix":"history.forward()",
+													"body":["history.forward()"],
+													"description":"history.forward()"},
+	
+	
+												"history go() brython":{
+													"prefix":"history.go()",
+													"body":["history.go()"],
+													"description":"history.go()"},
+	
+													"location.hash brython":{
+														"prefix":"location.hash",
+														"body":["location.hash"],
+														"description":"location.hash"},
+														
+													"location.host brython":{
+														"prefix":"location.host",
+														"body":["location.host"],
+														"description":"location.host"},
+														
+													"location.hostname brython":{
+														"prefix":"location.hostname",
+														"body":["location.hostname"],
+														"description":"location.hostname"},
+														
+													"location.href brython":{
+														"prefix":"location.href",
+														"body":["location.href"],
+														"description":"location.href"},
+														
+													"location.origin brython":{
+														"prefix":"location.origin",
+														"body":["location.origin"],
+														"description":"location.origin"},
+														
+													"location.pathname brython":{
+														"prefix":"location.pathname",
+														"body":["location.pathname"],
+														"description":"location.pathname"},
+														
+													"location.port brython":{
+														"prefix":"location.port",
+														"body":["location.port"],
+														"description":"location.port"},
+														
+													"location.protocol brython":{
+														"prefix":"location.protocol",
+														"body":["location.protocol"],
+														"description":"location.protocol"},
+														
+													"location.search brython":{
+														"prefix":"location.search",
+														"body":["location.search"],
+														"description":"location.search"},
+														
+													"location.assign() brython":{
+														"prefix":"location.assign()",
+														"body":["location.assign()"],
+														"description":"location.assign()"},
+														
+													"location.reload() brython":{
+														"prefix":"location.reload()",
+														"body":["location.reload()"],
+														"description":"location.reload()"},
+														
+													"location.replace() brython":{
+														"prefix":"location.replace()",
+														"body":["location.replace()"],
+														"description":"location.replace()"},					
+	
+	
+														"navigator.appCodeName brython":{
+															"prefix":"navigator.appcodename",
+															"body":["navigator.appCodeName"],
+															"description":"navigator.appCodeName"},
+															
+														"navigator.appName brython":{
+															"prefix":"navigator.appname",
+															"body":["navigator.appName"],
+															"description":"navigator.appName"},
+															
+														"navigator.appVersion brython":{
+															"prefix":"navigator.appversion",
+															"body":["navigator.appVersion"],
+															"description":"navigator.appVersion"},
+															
+														"navigator.cookieEnabled brython":{
+															"prefix":"navigator.cookieenabled",
+															"body":["navigator.cookieEnabled"],
+															"description":"navigator.cookieEnabled"},
+															
+														"navigator.geolocation brython":{
+															"prefix":"navigator.geolocation",
+															"body":["navigator.geolocation"],
+															"description":"navigator.geolocation"},
+															
+														"navigator.language brython":{
+															"prefix":"navigator.language",
+															"body":["navigator.language"],
+															"description":"navigator.language"},
+															
+														"navigator.onLine brython":{
+															"prefix":"navigator.online",
+															"body":["navigator.onLine"],
+															"description":"navigator.onLine"},
+															
+														"navigator.platform brython":{
+															"prefix":"navigator.platform",
+															"body":["navigator.platform"],
+															"description":"navigator.platform"},
+															
+														"navigator.product brython":{
+															"prefix":"navigator.product",
+															"body":["navigator.product"],
+															"description":"navigator.product"},
+															
+														"navigator.userAgent brython":{
+															"prefix":"navigator.useragent",
+															"body":["navigator.userAgent"],
+															"description":"navigator.userAgent"},
+															
+															"screen.availHeight brython":{
+																"prefix":"screen.availheight",
+																"body":["screen.availHeight"],
+																"description":"screen.availHeight"},
+															"screen.availWidth brython":{
+																"prefix":"screen.availwidth",
+																"body":["screen.availWidth"],
+																"description":"screen.availWidth"},
+															"screen.colorDepth brython":{
+																"prefix":"screen.colordepth",
+																"body":["screen.colorDepth"],
+																"description":"screen.colorDepth"},
+															"screen.height brython":{
+																"prefix":"screen.height",
+																"body":["screen.height"],
+																"description":"screen.height"},
+															"screen.pixelDepth brython":{
+																"prefix":"screen.pixeldepth",
+																"body":["screen.pixelDepth"],
+																"description":"screen.pixelDepth"},
+															"screen.width brython":{
+																"prefix":"screen.width",
+																"body":["screen.width"],
+																"description":"screen.width"},
+																
+																"style.alignContent brython":{
+																	"prefix":"style.aligncontent",
+																	"body":["style.alignContent ="],
+																	"description":"style.alignContent"},
+																
+																"style.alignItems brython":{
+																	"prefix":"style.alignitems",
+																	"body":["style.alignItems ="],
+																	"description":"style.alignItems"},
+																
+																"style.alignSelf brython":{
+																	"prefix":"style.alignself",
+																	"body":["style.alignSelf ="],
+																	"description":"style.alignSelf"},
+																
+																"style.animation brython":{
+																	"prefix":"style.animation",
+																	"body":["style.animation ="],
+																	"description":"style.animation"},
+																
+																"style.animationDelay brython":{
+																	"prefix":"style.animationdelay",
+																	"body":["style.animationDelay ="],
+																	"description":"style.animationDelay"},
+																
+																"style.animationDirection brython":{
+																	"prefix":"style.animationdirection",
+																	"body":["style.animationDirection ="],
+																	"description":"style.animationDirection"},
+																
+																"style.animationDuration brython":{
+																	"prefix":"style.animationduration",
+																	"body":["style.animationDuration ="],
+																	"description":"style.animationDuration"},
+																
+																"style.animationFillMode brython":{
+																	"prefix":"style.animationfillmode",
+																	"body":["style.animationFillMode ="],
+																	"description":"style.animationFillMode"},
+																
+																"style.animationIterationCount brython":{
+																	"prefix":"style.animationiterationcount",
+																	"body":["style.animationIterationCount ="],
+																	"description":"style.animationIterationCount"},
+																
+																"style.animationName brython":{
+																	"prefix":"style.animationname",
+																	"body":["style.animationName ="],
+																	"description":"style.animationName"},
+																
+																"style.animationTimingFunction brython":{
+																	"prefix":"style.animationtimingfunction",
+																	"body":["style.animationTimingFunction ="],
+																	"description":"style.animationTimingFunction"},
+																
+																"style.animationPlayState brython":{
+																	"prefix":"style.animationplaystate",
+																	"body":["style.animationPlayState ="],
+																	"description":"style.animationPlayState"},
+																
+																"style.background brython":{
+																	"prefix":"style.background",
+																	"body":["style.background ="],
+																	"description":"style.background"},
+																
+																"style.backgroundAttachment brython":{
+																	"prefix":"style.backgroundattachment",
+																	"body":["style.backgroundAttachment ="],
+																	"description":"style.backgroundAttachment"},
+																
+																"style.backgroundColor brython":{
+																	"prefix":"style.backgroundcolor",
+																	"body":["style.backgroundColor ="],
+																	"description":"style.backgroundColor"},
+																
+																"style.backgroundImage brython":{
+																	"prefix":"style.backgroundimage",
+																	"body":["style.backgroundImage ="],
+																	"description":"style.backgroundImage"},
+																
+																"style.backgroundPosition brython":{
+																	"prefix":"style.backgroundposition",
+																	"body":["style.backgroundPosition ="],
+																	"description":"style.backgroundPosition"},
+																
+																"style.backgroundRepeat brython":{
+																	"prefix":"style.backgroundrepeat",
+																	"body":["style.backgroundRepeat ="],
+																	"description":"style.backgroundRepeat"},
+																
+																"style.backgroundClip brython":{
+																	"prefix":"style.backgroundclip",
+																	"body":["style.backgroundClip ="],
+																	"description":"style.backgroundClip"},
+																
+																"style.backgroundOrigin brython":{
+																	"prefix":"style.backgroundorigin",
+																	"body":["style.backgroundOrigin ="],
+																	"description":"style.backgroundOrigin"},
+																
+																"style.backgroundSize brython":{
+																	"prefix":"style.backgroundsize",
+																	"body":["style.backgroundSize ="],
+																	"description":"style.backgroundSize"},
+																
+																"style.backfaceVisibility brython":{
+																	"prefix":"style.backfacevisibility",
+																	"body":["style.backfaceVisibility ="],
+																	"description":"style.backfaceVisibility"},
+																
+																"style.border brython":{
+																	"prefix":"style.border",
+																	"body":["style.border ="],
+																	"description":"style.border"},
+																
+																"style.borderBottom brython":{
+																	"prefix":"style.borderbottom",
+																	"body":["style.borderBottom ="],
+																	"description":"style.borderBottom"},
+																
+																"style.borderBottomColor brython":{
+																	"prefix":"style.borderbottomcolor",
+																	"body":["style.borderBottomColor ="],
+																	"description":"style.borderBottomColor"},
+																
+																"style.borderBottomLeftRadius brython":{
+																	"prefix":"style.borderbottomleftradius",
+																	"body":["style.borderBottomLeftRadius ="],
+																	"description":"style.borderBottomLeftRadius"},
+																
+																"style.borderBottomRightRadius brython":{
+																	"prefix":"style.borderbottomrightradius",
+																	"body":["style.borderBottomRightRadius ="],
+																	"description":"style.borderBottomRightRadius"},
+																
+																"style.borderBottomStyle brython":{
+																	"prefix":"style.borderbottomstyle",
+																	"body":["style.borderBottomStyle ="],
+																	"description":"style.borderBottomStyle"},
+																
+																"style.borderBottomWidth brython":{
+																	"prefix":"style.borderbottomwidth",
+																	"body":["style.borderBottomWidth ="],
+																	"description":"style.borderBottomWidth"},
+																
+																"style.borderCollapse brython":{
+																	"prefix":"style.bordercollapse",
+																	"body":["style.borderCollapse ="],
+																	"description":"style.borderCollapse"},
+																
+																"style.borderColor brython":{
+																	"prefix":"style.bordercolor",
+																	"body":["style.borderColor ="],
+																	"description":"style.borderColor"},
+																
+																"style.borderImage brython":{
+																	"prefix":"style.borderimage",
+																	"body":["style.borderImage ="],
+																	"description":"style.borderImage"},
+																
+																"style.borderImageOutset brython":{
+																	"prefix":"style.borderimageoutset",
+																	"body":["style.borderImageOutset ="],
+																	"description":"style.borderImageOutset"},
+																
+																"style.borderImageRepeat brython":{
+																	"prefix":"style.borderimagerepeat",
+																	"body":["style.borderImageRepeat ="],
+																	"description":"style.borderImageRepeat"},
+																
+																"style.borderImageSlice brython":{
+																	"prefix":"style.borderimageslice",
+																	"body":["style.borderImageSlice ="],
+																	"description":"style.borderImageSlice"},
+																
+																"style.borderImageSource brython":{
+																	"prefix":"style.borderimagesource",
+																	"body":["style.borderImageSource ="],
+																	"description":"style.borderImageSource"},
+																
+																"style.borderImageWidth brython":{
+																	"prefix":"style.borderimagewidth",
+																	"body":["style.borderImageWidth ="],
+																	"description":"style.borderImageWidth"},
+																
+																"style.borderLeft brython":{
+																	"prefix":"style.borderleft",
+																	"body":["style.borderLeft ="],
+																	"description":"style.borderLeft"},
+																
+																"style.borderLeftColor brython":{
+																	"prefix":"style.borderleftcolor",
+																	"body":["style.borderLeftColor ="],
+																	"description":"style.borderLeftColor"},
+																
+																"style.borderLeftStyle brython":{
+																	"prefix":"style.borderleftstyle",
+																	"body":["style.borderLeftStyle ="],
+																	"description":"style.borderLeftStyle"},
+																
+																"style.borderLeftWidth brython":{
+																	"prefix":"style.borderleftwidth",
+																	"body":["style.borderLeftWidth ="],
+																	"description":"style.borderLeftWidth"},
+																
+																"style.borderRadius brython":{
+																	"prefix":"style.borderradius",
+																	"body":["style.borderRadius ="],
+																	"description":"style.borderRadius"},
+																
+																"style.borderRight brython":{
+																	"prefix":"style.borderright",
+																	"body":["style.borderRight ="],
+																	"description":"style.borderRight"},
+																
+																"style.borderRightColor brython":{
+																	"prefix":"style.borderrightcolor",
+																	"body":["style.borderRightColor ="],
+																	"description":"style.borderRightColor"},
+																
+																"style.borderRightStyle brython":{
+																	"prefix":"style.borderrightstyle",
+																	"body":["style.borderRightStyle ="],
+																	"description":"style.borderRightStyle"},
+																
+																"style.borderRightWidth brython":{
+																	"prefix":"style.borderrightwidth",
+																	"body":["style.borderRightWidth ="],
+																	"description":"style.borderRightWidth"},
+																
+																"style.borderSpacing brython":{
+																	"prefix":"style.borderspacing",
+																	"body":["style.borderSpacing ="],
+																	"description":"style.borderSpacing"},
+																
+																"style.borderStyle brython":{
+																	"prefix":"style.borderstyle",
+																	"body":["style.borderStyle ="],
+																	"description":"style.borderStyle"},
+																
+																"style.borderTop brython":{
+																	"prefix":"style.bordertop",
+																	"body":["style.borderTop ="],
+																	"description":"style.borderTop"},
+																
+																"style.borderTopColor brython":{
+																	"prefix":"style.bordertopcolor",
+																	"body":["style.borderTopColor ="],
+																	"description":"style.borderTopColor"},
+																
+																"style.borderTopLeftRadius brython":{
+																	"prefix":"style.bordertopleftradius",
+																	"body":["style.borderTopLeftRadius ="],
+																	"description":"style.borderTopLeftRadius"},
+																
+																"style.borderTopRightRadius brython":{
+																	"prefix":"style.bordertoprightradius",
+																	"body":["style.borderTopRightRadius ="],
+																	"description":"style.borderTopRightRadius"},
+																
+																"style.borderTopStyle brython":{
+																	"prefix":"style.bordertopstyle",
+																	"body":["style.borderTopStyle ="],
+																	"description":"style.borderTopStyle"},
+																
+																"style.borderTopWidth brython":{
+																	"prefix":"style.bordertopwidth",
+																	"body":["style.borderTopWidth ="],
+																	"description":"style.borderTopWidth"},
+																
+																"style.borderWidth brython":{
+																	"prefix":"style.borderwidth",
+																	"body":["style.borderWidth ="],
+																	"description":"style.borderWidth"},
+																
+																"style.bottom brython":{
+																	"prefix":"style.bottom",
+																	"body":["style.bottom ="],
+																	"description":"style.bottom"},
+																
+																"style.boxDecorationBreak brython":{
+																	"prefix":"style.boxdecorationbreak",
+																	"body":["style.boxDecorationBreak ="],
+																	"description":"style.boxDecorationBreak"},
+																
+																"style.boxShadow brython":{
+																	"prefix":"style.boxshadow",
+																	"body":["style.boxShadow ="],
+																	"description":"style.boxShadow"},
+																
+																"style.boxSizing brython":{
+																	"prefix":"style.boxsizing",
+																	"body":["style.boxSizing ="],
+																	"description":"style.boxSizing"},
+																
+																"style.captionSide brython":{
+																	"prefix":"style.captionside",
+																	"body":["style.captionSide ="],
+																	"description":"style.captionSide"},
+																
+																"style.clear brython":{
+																	"prefix":"style.clear",
+																	"body":["style.clear ="],
+																	"description":"style.clear"},
+																
+																"style.clip brython":{
+																	"prefix":"style.clip",
+																	"body":["style.clip ="],
+																	"description":"style.clip"},
+																
+																"style.color brython":{
+																	"prefix":"style.color",
+																	"body":["style.color ="],
+																	"description":"style.color"},
+																
+																"style.columnCount brython":{
+																	"prefix":"style.columncount",
+																	"body":["style.columnCount ="],
+																	"description":"style.columnCount"},
+																
+																"style.columnFill brython":{
+																	"prefix":"style.columnfill",
+																	"body":["style.columnFill ="],
+																	"description":"style.columnFill"},
+																
+																"style.columnGap brython":{
+																	"prefix":"style.columngap",
+																	"body":["style.columnGap ="],
+																	"description":"style.columnGap"},
+																
+																"style.columnRule brython":{
+																	"prefix":"style.columnrule",
+																	"body":["style.columnRule ="],
+																	"description":"style.columnRule"},
+																
+																"style.columnRuleColor brython":{
+																	"prefix":"style.columnrulecolor",
+																	"body":["style.columnRuleColor ="],
+																	"description":"style.columnRuleColor"},
+																
+																"style.columnRuleStyle brython":{
+																	"prefix":"style.columnrulestyle",
+																	"body":["style.columnRuleStyle ="],
+																	"description":"style.columnRuleStyle"},
+																
+																"style.columnRuleWidth brython":{
+																	"prefix":"style.columnrulewidth",
+																	"body":["style.columnRuleWidth ="],
+																	"description":"style.columnRuleWidth"},
+																
+																"style.columns brython":{
+																	"prefix":"style.columns",
+																	"body":["style.columns ="],
+																	"description":"style.columns"},
+																
+																"style.columnSpan brython":{
+																	"prefix":"style.columnspan",
+																	"body":["style.columnSpan ="],
+																	"description":"style.columnSpan"},
+																
+																"style.columnWidth brython":{
+																	"prefix":"style.columnwidth",
+																	"body":["style.columnWidth ="],
+																	"description":"style.columnWidth"},
+																
+																"style.content brython":{
+																	"prefix":"style.content",
+																	"body":["style.content ="],
+																	"description":"style.content"},
+																
+																"style.counterIncrement brython":{
+																	"prefix":"style.counterincrement",
+																	"body":["style.counterIncrement ="],
+																	"description":"style.counterIncrement"},
+																
+																"style.counterReset brython":{
+																	"prefix":"style.counterreset",
+																	"body":["style.counterReset ="],
+																	"description":"style.counterReset"},
+																
+																"style.cursor brython":{
+																	"prefix":"style.cursor",
+																	"body":["style.cursor ="],
+																	"description":"style.cursor"},
+																
+																"style.direction brython":{
+																	"prefix":"style.direction",
+																	"body":["style.direction ="],
+																	"description":"style.direction"},
+																
+																"style.display brython":{
+																	"prefix":"style.display",
+																	"body":["style.display ="],
+																	"description":"style.display"},
+																
+																"style.emptyCells brython":{
+																	"prefix":"style.emptycells",
+																	"body":["style.emptyCells ="],
+																	"description":"style.emptyCells"},
+																
+																"style.filter brython":{
+																	"prefix":"style.filter",
+																	"body":["style.filter ="],
+																	"description":"style.filter"},
+																
+																"style.flex brython":{
+																	"prefix":"style.flex",
+																	"body":["style.flex ="],
+																	"description":"style.flex"},
+																
+																"style.flexBasis brython":{
+																	"prefix":"style.flexbasis",
+																	"body":["style.flexBasis ="],
+																	"description":"style.flexBasis"},
+																
+																"style.flexDirection brython":{
+																	"prefix":"style.flexdirection",
+																	"body":["style.flexDirection ="],
+																	"description":"style.flexDirection"},
+																
+																"style.flexFlow brython":{
+																	"prefix":"style.flexflow",
+																	"body":["style.flexFlow ="],
+																	"description":"style.flexFlow"},
+																
+																"style.flexGrow brython":{
+																	"prefix":"style.flexgrow",
+																	"body":["style.flexGrow ="],
+																	"description":"style.flexGrow"},
+																
+																"style.flexShrink brython":{
+																	"prefix":"style.flexshrink",
+																	"body":["style.flexShrink ="],
+																	"description":"style.flexShrink"},
+																
+																"style.flexWrap brython":{
+																	"prefix":"style.flexwrap",
+																	"body":["style.flexWrap ="],
+																	"description":"style.flexWrap"},
+																
+																"style.cssFloat brython":{
+																	"prefix":"style.cssfloat",
+																	"body":["style.cssFloat ="],
+																	"description":"style.cssFloat"},
+																
+																"style.font brython":{
+																	"prefix":"style.font",
+																	"body":["style.font ="],
+																	"description":"style.font"},
+																
+																"style.fontFamily brython":{
+																	"prefix":"style.fontfamily",
+																	"body":["style.fontFamily ="],
+																	"description":"style.fontFamily"},
+																
+																"style.fontSize brython":{
+																	"prefix":"style.fontsize",
+																	"body":["style.fontSize ="],
+																	"description":"style.fontSize"},
+																
+																"style.fontStyle brython":{
+																	"prefix":"style.fontstyle",
+																	"body":["style.fontStyle ="],
+																	"description":"style.fontStyle"},
+																
+																"style.fontVariant brython":{
+																	"prefix":"style.fontvariant",
+																	"body":["style.fontVariant ="],
+																	"description":"style.fontVariant"},
+																
+																"style.fontWeight brython":{
+																	"prefix":"style.fontweight",
+																	"body":["style.fontWeight ="],
+																	"description":"style.fontWeight"},
+																
+																"style.fontSizeAdjust brython":{
+																	"prefix":"style.fontsizeadjust",
+																	"body":["style.fontSizeAdjust ="],
+																	"description":"style.fontSizeAdjust"},
+																
+																"style.fontStretch brython":{
+																	"prefix":"style.fontstretch",
+																	"body":["style.fontStretch ="],
+																	"description":"style.fontStretch"},
+																
+																"style.hangingPunctuation brython":{
+																	"prefix":"style.hangingpunctuation",
+																	"body":["style.hangingPunctuation ="],
+																	"description":"style.hangingPunctuation"},
+																
+																"style.height brython":{
+																	"prefix":"style.height",
+																	"body":["style.height ="],
+																	"description":"style.height"},
+																
+																"style.hyphens brython":{
+																	"prefix":"style.hyphens",
+																	"body":["style.hyphens ="],
+																	"description":"style.hyphens"},
+																
+																"style.icon brython":{
+																	"prefix":"style.icon",
+																	"body":["style.icon ="],
+																	"description":"style.icon"},
+																
+																"style.imageOrientation brython":{
+																	"prefix":"style.imageorientation",
+																	"body":["style.imageOrientation ="],
+																	"description":"style.imageOrientation"},
+																
+																"style.justifyContent brython":{
+																	"prefix":"style.justifycontent",
+																	"body":["style.justifyContent ="],
+																	"description":"style.justifyContent"},
+																
+																"style.left brython":{
+																	"prefix":"style.left",
+																	"body":["style.left ="],
+																	"description":"style.left"},
+																
+																"style.letterSpacing brython":{
+																	"prefix":"style.letterspacing",
+																	"body":["style.letterSpacing ="],
+																	"description":"style.letterSpacing"},
+																
+																"style.lineHeight brython":{
+																	"prefix":"style.lineheight",
+																	"body":["style.lineHeight ="],
+																	"description":"style.lineHeight"},
+																
+																"style.listStyle brython":{
+																	"prefix":"style.liststyle",
+																	"body":["style.listStyle ="],
+																	"description":"style.listStyle"},
+																
+																"style.listStyleImage brython":{
+																	"prefix":"style.liststyleimage",
+																	"body":["style.listStyleImage ="],
+																	"description":"style.listStyleImage"},
+																
+																"style.listStylePosition brython":{
+																	"prefix":"style.liststyleposition",
+																	"body":["style.listStylePosition ="],
+																	"description":"style.listStylePosition"},
+																
+																"style.listStyleType brython":{
+																	"prefix":"style.liststyletype",
+																	"body":["style.listStyleType ="],
+																	"description":"style.listStyleType"},
+																
+																"style.margin brython":{
+																	"prefix":"style.margin",
+																	"body":["style.margin ="],
+																	"description":"style.margin"},
+																
+																"style.marginBottom brython":{
+																	"prefix":"style.marginbottom",
+																	"body":["style.marginBottom ="],
+																	"description":"style.marginBottom"},
+																
+																"style.marginLeft brython":{
+																	"prefix":"style.marginleft",
+																	"body":["style.marginLeft ="],
+																	"description":"style.marginLeft"},
+																
+																"style.marginRight brython":{
+																	"prefix":"style.marginright",
+																	"body":["style.marginRight ="],
+																	"description":"style.marginRight"},
+																
+																"style.marginTop brython":{
+																	"prefix":"style.margintop",
+																	"body":["style.marginTop ="],
+																	"description":"style.marginTop"},
+																
+																"style.maxHeight brython":{
+																	"prefix":"style.maxheight",
+																	"body":["style.maxHeight ="],
+																	"description":"style.maxHeight"},
+																
+																"style.maxWidth brython":{
+																	"prefix":"style.maxwidth",
+																	"body":["style.maxWidth ="],
+																	"description":"style.maxWidth"},
+																
+																"style.minHeight brython":{
+																	"prefix":"style.minheight",
+																	"body":["style.minHeight ="],
+																	"description":"style.minHeight"},
+																
+																"style.minWidth brython":{
+																	"prefix":"style.minwidth",
+																	"body":["style.minWidth ="],
+																	"description":"style.minWidth"},
+																
+																"style.navDown brython":{
+																	"prefix":"style.navdown",
+																	"body":["style.navDown ="],
+																	"description":"style.navDown"},
+																
+																"style.navIndex brython":{
+																	"prefix":"style.navindex",
+																	"body":["style.navIndex ="],
+																	"description":"style.navIndex"},
+																
+																"style.navLeft brython":{
+																	"prefix":"style.navleft",
+																	"body":["style.navLeft ="],
+																	"description":"style.navLeft"},
+																
+																"style.navRight brython":{
+																	"prefix":"style.navright",
+																	"body":["style.navRight ="],
+																	"description":"style.navRight"},
+																
+																"style.navUp brython":{
+																	"prefix":"style.navup",
+																	"body":["style.navUp ="],
+																	"description":"style.navUp"},
+																
+																"style.opacity brython":{
+																	"prefix":"style.opacity",
+																	"body":["style.opacity ="],
+																	"description":"style.opacity"},
+																
+																"style.order brython":{
+																	"prefix":"style.order",
+																	"body":["style.order ="],
+																	"description":"style.order"},
+																
+																"style.orphans brython":{
+																	"prefix":"style.orphans",
+																	"body":["style.orphans ="],
+																	"description":"style.orphans"},
+																
+																"style.outline brython":{
+																	"prefix":"style.outline",
+																	"body":["style.outline ="],
+																	"description":"style.outline"},
+																
+																"style.outlineColor brython":{
+																	"prefix":"style.outlinecolor",
+																	"body":["style.outlineColor ="],
+																	"description":"style.outlineColor"},
+																
+																"style.outlineOffset brython":{
+																	"prefix":"style.outlineoffset",
+																	"body":["style.outlineOffset ="],
+																	"description":"style.outlineOffset"},
+																
+																"style.outlineStyle brython":{
+																	"prefix":"style.outlinestyle",
+																	"body":["style.outlineStyle ="],
+																	"description":"style.outlineStyle"},
+																
+																"style.outlineWidth brython":{
+																	"prefix":"style.outlinewidth",
+																	"body":["style.outlineWidth ="],
+																	"description":"style.outlineWidth"},
+																
+																"style.overflow brython":{
+																	"prefix":"style.overflow",
+																	"body":["style.overflow ="],
+																	"description":"style.overflow"},
+																
+																"style.overflowX brython":{
+																	"prefix":"style.overflowx",
+																	"body":["style.overflowX ="],
+																	"description":"style.overflowX"},
+																
+																"style.overflowY brython":{
+																	"prefix":"style.overflowy",
+																	"body":["style.overflowY ="],
+																	"description":"style.overflowY"},
+																
+																"style.padding brython":{
+																	"prefix":"style.padding",
+																	"body":["style.padding ="],
+																	"description":"style.padding"},
+																
+																"style.paddingBottom brython":{
+																	"prefix":"style.paddingbottom",
+																	"body":["style.paddingBottom ="],
+																	"description":"style.paddingBottom"},
+																
+																"style.paddingLeft brython":{
+																	"prefix":"style.paddingleft",
+																	"body":["style.paddingLeft ="],
+																	"description":"style.paddingLeft"},
+																
+																"style.paddingRight brython":{
+																	"prefix":"style.paddingright",
+																	"body":["style.paddingRight ="],
+																	"description":"style.paddingRight"},
+																
+																"style.paddingTop brython":{
+																	"prefix":"style.paddingtop",
+																	"body":["style.paddingTop ="],
+																	"description":"style.paddingTop"},
+																
+																"style.pageBreakAfter brython":{
+																	"prefix":"style.pagebreakafter",
+																	"body":["style.pageBreakAfter ="],
+																	"description":"style.pageBreakAfter"},
+																
+																"style.pageBreakBefore brython":{
+																	"prefix":"style.pagebreakbefore",
+																	"body":["style.pageBreakBefore ="],
+																	"description":"style.pageBreakBefore"},
+																
+																"style.pageBreakInside brython":{
+																	"prefix":"style.pagebreakinside",
+																	"body":["style.pageBreakInside ="],
+																	"description":"style.pageBreakInside"},
+																
+																"style.perspective brython":{
+																	"prefix":"style.perspective",
+																	"body":["style.perspective ="],
+																	"description":"style.perspective"},
+																
+																"style.perspectiveOrigin brython":{
+																	"prefix":"style.perspectiveorigin",
+																	"body":["style.perspectiveOrigin ="],
+																	"description":"style.perspectiveOrigin"},
+																
+																"style.position brython":{
+																	"prefix":"style.position",
+																	"body":["style.position ="],
+																	"description":"style.position"},
+																
+																"style.quotes brython":{
+																	"prefix":"style.quotes",
+																	"body":["style.quotes ="],
+																	"description":"style.quotes"},
+																
+																"style.resize brython":{
+																	"prefix":"style.resize",
+																	"body":["style.resize ="],
+																	"description":"style.resize"},
+																
+																"style.right brython":{
+																	"prefix":"style.right",
+																	"body":["style.right ="],
+																	"description":"style.right"},
+																
+																"style.tableLayout brython":{
+																	"prefix":"style.tablelayout",
+																	"body":["style.tableLayout ="],
+																	"description":"style.tableLayout"},
+																
+																"style.tabSize brython":{
+																	"prefix":"style.tabsize",
+																	"body":["style.tabSize ="],
+																	"description":"style.tabSize"},
+																
+																"style.textAlign brython":{
+																	"prefix":"style.textalign",
+																	"body":["style.textAlign ="],
+																	"description":"style.textAlign"},
+																
+																"style.textAlignLast brython":{
+																	"prefix":"style.textalignlast",
+																	"body":["style.textAlignLast ="],
+																	"description":"style.textAlignLast"},
+																
+																"style.textDecoration brython":{
+																	"prefix":"style.textdecoration",
+																	"body":["style.textDecoration ="],
+																	"description":"style.textDecoration"},
+																
+																"style.textDecorationColor brython":{
+																	"prefix":"style.textdecorationcolor",
+																	"body":["style.textDecorationColor ="],
+																	"description":"style.textDecorationColor"},
+																
+																"style.textDecorationLine brython":{
+																	"prefix":"style.textdecorationline",
+																	"body":["style.textDecorationLine ="],
+																	"description":"style.textDecorationLine"},
+																
+																"style.textDecorationStyle brython":{
+																	"prefix":"style.textdecorationstyle",
+																	"body":["style.textDecorationStyle ="],
+																	"description":"style.textDecorationStyle"},
+																
+																"style.textIndent brython":{
+																	"prefix":"style.textindent",
+																	"body":["style.textIndent ="],
+																	"description":"style.textIndent"},
+																
+																"style.textJustify brython":{
+																	"prefix":"style.textjustify",
+																	"body":["style.textJustify ="],
+																	"description":"style.textJustify"},
+																
+																"style.textOverflow brython":{
+																	"prefix":"style.textoverflow",
+																	"body":["style.textOverflow ="],
+																	"description":"style.textOverflow"},
+																
+																"style.textShadow brython":{
+																	"prefix":"style.textshadow",
+																	"body":["style.textShadow ="],
+																	"description":"style.textShadow"},
+																
+																"style.textTransform brython":{
+																	"prefix":"style.texttransform",
+																	"body":["style.textTransform ="],
+																	"description":"style.textTransform"},
+																
+																"style.top brython":{
+																	"prefix":"style.top",
+																	"body":["style.top ="],
+																	"description":"style.top"},
+																
+																"style.transform brython":{
+																	"prefix":"style.transform",
+																	"body":["style.transform ="],
+																	"description":"style.transform"},
+																
+																"style.transformOrigin brython":{
+																	"prefix":"style.transformorigin",
+																	"body":["style.transformOrigin ="],
+																	"description":"style.transformOrigin"},
+																
+																"style.transformStyle brython":{
+																	"prefix":"style.transformstyle",
+																	"body":["style.transformStyle ="],
+																	"description":"style.transformStyle"},
+																
+																"style.transition brython":{
+																	"prefix":"style.transition",
+																	"body":["style.transition ="],
+																	"description":"style.transition"},
+																
+																"style.transitionProperty brython":{
+																	"prefix":"style.transitionproperty",
+																	"body":["style.transitionProperty ="],
+																	"description":"style.transitionProperty"},
+																
+																"style.transitionDuration brython":{
+																	"prefix":"style.transitionduration",
+																	"body":["style.transitionDuration ="],
+																	"description":"style.transitionDuration"},
+																
+																"style.transitionTimingFunction brython":{
+																	"prefix":"style.transitiontimingfunction",
+																	"body":["style.transitionTimingFunction ="],
+																	"description":"style.transitionTimingFunction"},
+																
+																"style.transitionDelay brython":{
+																	"prefix":"style.transitiondelay",
+																	"body":["style.transitionDelay ="],
+																	"description":"style.transitionDelay"},
+																
+																"style.unicodeBidi brython":{
+																	"prefix":"style.unicodebidi",
+																	"body":["style.unicodeBidi ="],
+																	"description":"style.unicodeBidi"},
+																
+																"style.userSelect brython":{
+																	"prefix":"style.userselect",
+																	"body":["style.userSelect ="],
+																	"description":"style.userSelect"},
+																
+																"style.verticalAlign brython":{
+																	"prefix":"style.verticalalign",
+																	"body":["style.verticalAlign ="],
+																	"description":"style.verticalAlign"},
+																
+																"style.visibility brython":{
+																	"prefix":"style.visibility",
+																	"body":["style.visibility ="],
+																	"description":"style.visibility"},
+																
+																"style.whiteSpace brython":{
+																	"prefix":"style.whitespace",
+																	"body":["style.whiteSpace ="],
+																	"description":"style.whiteSpace"},
+																
+																"style.width brython":{
+																	"prefix":"style.width",
+																	"body":["style.width ="],
+																	"description":"style.width"},
+																
+																"style.wordBreak brython":{
+																	"prefix":"style.wordbreak",
+																	"body":["style.wordBreak ="],
+																	"description":"style.wordBreak"},
+																
+																"style.wordSpacing brython":{
+																	"prefix":"style.wordspacing",
+																	"body":["style.wordSpacing ="],
+																	"description":"style.wordSpacing"},
+																
+																"style.wordWrap brython":{
+																	"prefix":"style.wordwrap",
+																	"body":["style.wordWrap ="],
+																	"description":"style.wordWrap"},
+																
+																"style.widows brython":{
+																	"prefix":"style.widows",
+																	"body":["style.widows ="],
+																	"description":"style.widows"},
+																
+																"style.zIndex brython":{
+																	"prefix":"style.zindex",
+																	"body":["style.zIndex ="],
+																	"description":"style.zIndex"},
+																	"window.closed brython":{
+																		"prefix":"window.closed",
+																		"body":["window.closed"],
+																		"description":"window.closed"},
+																		
+																	"window.console brython":{
+																		"prefix":"window.console",
+																		"body":["window.console"],
+																		"description":"window.console"},
+																		
+																	"window.defaultStatus brython":{
+																		"prefix":"window.defaultstatus",
+																		"body":["window.defaultStatus"],
+																		"description":"window.defaultStatus"},
+																		
+																	"window.document brython":{
+																		"prefix":"window.document",
+																		"body":["window.document"],
+																		"description":"window.document"},
+																		
+																	"window.frameElement brython":{
+																		"prefix":"window.frameelement",
+																		"body":["window.frameElement"],
+																		"description":"window.frameElement"},
+																		
+																	"window.frames brython":{
+																		"prefix":"window.frames",
+																		"body":["window.frames"],
+																		"description":"window.frames"},
+																		
+																	"window.history brython":{
+																		"prefix":"window.history",
+																		"body":["window.history"],
+																		"description":"window.history"},
+																		
+																	"window.innerHeight brython":{
+																		"prefix":"window.innerheight",
+																		"body":["window.innerHeight"],
+																		"description":"window.innerHeight"},
+																		
+																	"window.innerWidth brython":{
+																		"prefix":"window.innerwidth",
+																		"body":["window.innerWidth"],
+																		"description":"window.innerWidth"},
+																		
+																	"window.length brython":{
+																		"prefix":"window.length",
+																		"body":["window.length"],
+																		"description":"window.length"},
+																		
+																	"window.localStorage brython":{
+																		"prefix":"window.localstorage",
+																		"body":["window.localStorage"],
+																		"description":"window.localStorage"},
+																		
+																	"window.location brython":{
+																		"prefix":"window.location",
+																		"body":["window.location"],
+																		"description":"window.location"},
+																		
+																	"window.name brython":{
+																		"prefix":"window.name",
+																		"body":["window.name"],
+																		"description":"window.name"},
+																		
+																	"window.navigator brython":{
+																		"prefix":"window.navigator",
+																		"body":["window.navigator"],
+																		"description":"window.navigator"},
+																		
+																	"window.opener brython":{
+																		"prefix":"window.opener",
+																		"body":["window.opener"],
+																		"description":"window.opener"},
+																		
+																	"window.outerHeight brython":{
+																		"prefix":"window.outerheight",
+																		"body":["window.outerHeight"],
+																		"description":"window.outerHeight"},
+																		
+																	"window.outerWidth brython":{
+																		"prefix":"window.outerwidth",
+																		"body":["window.outerWidth"],
+																		"description":"window.outerWidth"},
+																		
+																	"window.pageXOffset brython":{
+																		"prefix":"window.pagexoffset",
+																		"body":["window.pageXOffset"],
+																		"description":"window.pageXOffset"},
+																		
+																	"window.pageYOffset brython":{
+																		"prefix":"window.pageyoffset",
+																		"body":["window.pageYOffset"],
+																		"description":"window.pageYOffset"},
+																		
+																	"window.parent brython":{
+																		"prefix":"window.parent",
+																		"body":["window.parent"],
+																		"description":"window.parent"},
+																		
+																	"window.screen brython":{
+																		"prefix":"window.screen",
+																		"body":["window.screen"],
+																		"description":"window.screen"},
+																		
+																	"window.screenLeft brython":{
+																		"prefix":"window.screenleft",
+																		"body":["window.screenLeft"],
+																		"description":"window.screenLeft"},
+																		
+																	"window.screenTop brython":{
+																		"prefix":"window.screentop",
+																		"body":["window.screenTop"],
+																		"description":"window.screenTop"},
+																		
+																	"window.screenX brython":{
+																		"prefix":"window.screenx",
+																		"body":["window.screenX"],
+																		"description":"window.screenX"},
+																		
+																	"window.screenY brython":{
+																		"prefix":"window.screeny",
+																		"body":["window.screenY"],
+																		"description":"window.screenY"},
+																		
+																	"window.sessionStorage brython":{
+																		"prefix":"window.sessionstorage",
+																		"body":["window.sessionStorage"],
+																		"description":"window.sessionStorage"},
+																		
+																	"window.scrollX brython":{
+																		"prefix":"window.scrollx",
+																		"body":["window.scrollX"],
+																		"description":"window.scrollX"},
+																		
+																	"window.scrollY brython":{
+																		"prefix":"window.scrolly",
+																		"body":["window.scrollY"],
+																		"description":"window.scrollY"},
+																		
+																	"window.self brython":{
+																		"prefix":"window.self",
+																		"body":["window.self"],
+																		"description":"window.self"},
+																		
+																	"window.status brython":{
+																		"prefix":"window.status",
+																		"body":["window.status"],
+																		"description":"window.status"},
+																		
+																	"window.top brython":{
+																		"prefix":"window.top",
+																		"body":["window.top"],
+																		"description":"window.top"},
+																		
+	
+	"window.alert() brython":{
+		"prefix":"window.alert()",
+		"body":["window.alert()"],
+		"description":"window.alert()"},
+		
+	"window.atob() brython":{
+		"prefix":"window.atob()",
+		"body":["window.atob()"],
+		"description":"window.atob()"},
+		
+	"window.blur() brython":{
+		"prefix":"window.blur()",
+		"body":["window.blur()"],
+		"description":"window.blur()"},
+		
+	"window.btoa() brython":{
+		"prefix":"window.btoa()",
+		"body":["window.btoa()"],
+		"description":"window.btoa()"},
+		
+	"window.clearInterval() brython":{
+		"prefix":"window.clearinterval()",
+		"body":["window.clearInterval()"],
+		"description":"window.clearInterval()"},
+		
+	"window.clearTimeout() brython":{
+		"prefix":"window.cleartimeout()",
+		"body":["window.clearTimeout()"],
+		"description":"window.clearTimeout()"},
+		
+	"window.close() brython":{
+		"prefix":"window.close()",
+		"body":["window.close()"],
+		"description":"window.close()"},
+		
+	"window.confirm() brython":{
+		"prefix":"window.confirm()",
+		"body":["window.confirm()"],
+		"description":"window.confirm()"},
+		
+	"window.focus() brython":{
+		"prefix":"window.focus()",
+		"body":["window.focus()"],
+		"description":"window.focus()"},
+		
+	"window.getComputedStyle() brython":{
+		"prefix":"window.getcomputedstyle()",
+		"body":["window.getComputedStyle()"],
+		"description":"window.getComputedStyle()"},
+		
+	"window.getSelection() brython":{
+		"prefix":"window.getselection()",
+		"body":["window.getSelection()"],
+		"description":"window.getSelection()"},
+		
+	"window.matchMedia() brython":{
+		"prefix":"window.matchmedia()",
+		"body":["window.matchMedia()"],
+		"description":"window.matchMedia()"},
+		
+	"window.moveBy() brython":{
+		"prefix":"window.moveby()",
+		"body":["window.moveBy()"],
+		"description":"window.moveBy()"},
+		
+	"window.moveTo() brython":{
+		"prefix":"window.moveto()",
+		"body":["window.moveTo()"],
+		"description":"window.moveTo()"},
+		
+	"window.open() brython":{
+		"prefix":"window.open()",
+		"body":["window.open()"],
+		"description":"window.open()"},
+		
+	"window.print() brython":{
+		"prefix":"window.print()",
+		"body":["window.print()"],
+		"description":"window.print()"},
+		
+	"window.prompt() brython":{
+		"prefix":"window.prompt()",
+		"body":["window.prompt()"],
+		"description":"window.prompt()"},
+		
+	"window.resizeBy() brython":{
+		"prefix":"window.resizeby()",
+		"body":["window.resizeBy()"],
+		"description":"window.resizeBy()"},
+		
+	"window.resizeTo() brython":{
+		"prefix":"window.resizeto()",
+		"body":["window.resizeTo()"],
+		"description":"window.resizeTo()"},
+		
+	"window.scroll() brython":{
+		"prefix":"window.scroll()",
+		"body":["window.scroll()"],
+		"description":"window.scroll()"},
+		
+	"window.scrollBy() brython":{
+		"prefix":"window.scrollby()",
+		"body":["window.scrollBy()"],
+		"description":"window.scrollBy()"},
+		
+	"window.scrollTo() brython":{
+		"prefix":"window.scrollto()",
+		"body":["window.scrollTo()"],
+		"description":"window.scrollTo()"},
+		
+	"window.setInterval() brython":{
+		"prefix":"window.setinterval()",
+		"body":["window.setInterval()"],
+		"description":"window.setInterval()"},
+		
+	"window.setTimeout() brython":{
+		"prefix":"window.settimeout()",
+		"body":["window.setTimeout()"],
+		"description":"window.setTimeout()"},
+		
+	"window.stop() brython":{
+		"prefix":"window.stop()",
+		"body":["window.stop()"],
+		"description":"window.stop()"},
+		
+		
+		"a() brython":{
+			"prefix":"svg.a()",
+			"body":["svg.a()"],
+			"description":"a()"},
+		
+		"altGlyph() brython":{
+			"prefix":"svg.altglyph()",
+			"body":["svg.altGlyph()"],
+			"description":"altGlyph()"},
+		
+		"altGlyphDef() brython":{
+			"prefix":"svg.altglyphdef()",
+			"body":["svg.altGlyphDef()"],
+			"description":"altGlyphDef()"},
+		
+		"altGlyphItem() brython":{
+			"prefix":"svg.altglyphitem()",
+			"body":["svg.altGlyphItem()"],
+			"description":"altGlyphItem()"},
+		
+		"animate() brython":{
+			"prefix":"svg.animate()",
+			"body":["svg.animate()"],
+			"description":"animate()"},
+		
+		"animateColor() brython":{
+			"prefix":"svg.animatecolor()",
+			"body":["svg.animateColor()"],
+			"description":"animateColor()"},
+		
+		"animateMotion() brython":{
+			"prefix":"svg.animatemotion()",
+			"body":["svg.animateMotion()"],
+			"description":"animateMotion()"},
+		
+		"animateTransform() brython":{
+			"prefix":"svg.animatetransform()",
+			"body":["svg.animateTransform()"],
+			"description":"animateTransform()"},
+		
+		"circle() brython":{
+			"prefix":"svg.circle()",
+			"body":["svg.circle()"],
+			"description":"circle()"},
+		
+		"clipPath() brython":{
+			"prefix":"svg.clippath()",
+			"body":["svg.clipPath()"],
+			"description":"clipPath()"},
+		
+		"color_profile() brython":{
+			"prefix":"svg.color_profile()",
+			"body":["svg.color_profile()"],
+			"description":"color_profile()"},
+		
+		"cursor() brython":{
+			"prefix":"svg.cursor()",
+			"body":["svg.cursor()"],
+			"description":"cursor()"},
+		
+		"defs() brython":{
+			"prefix":"svg.defs()",
+			"body":["svg.defs()"],
+			"description":"defs()"},
+		
+		"desc() brython":{
+			"prefix":"svg.desc()",
+			"body":["svg.desc()"],
+			"description":"desc()"},
+		
+		"ellipse() brython":{
+			"prefix":"svg.ellipse()",
+			"body":["svg.ellipse()"],
+			"description":"ellipse()"},
+		
+		"feBlend() brython":{
+			"prefix":"svg.feblend()",
+			"body":["svg.feBlend()"],
+			"description":"feBlend()"},
+		
+		"g() brython":{
+			"prefix":"svg.g()",
+			"body":["svg.g()"],
+			"description":"g()"},
+		
+		"image() brython":{
+			"prefix":"svg.image()",
+			"body":["svg.image()"],
+			"description":"image()"},
+		
+		"line() brython":{
+			"prefix":"svg.line()",
+			"body":["svg.line()"],
+			"description":"line()"},
+		
+		"linearGradient() brython":{
+			"prefix":"svg.lineargradient()",
+			"body":["svg.linearGradient()"],
+			"description":"linearGradient()"},
+		
+		"marker() brython":{
+			"prefix":"svg.marker()",
+			"body":["svg.marker()"],
+			"description":"marker()"},
+		
+		"mask() brython":{
+			"prefix":"svg.mask()",
+			"body":["svg.mask()"],
+			"description":"mask()"},
+		
+		"path() brython":{
+			"prefix":"svg.path()",
+			"body":["svg.path()"],
+			"description":"path()"},
+		
+		"pattern() brython":{
+			"prefix":"svg.pattern()",
+			"body":["svg.pattern()"],
+			"description":"pattern()"},
+		
+		"polygon() brython":{
+			"prefix":"svg.polygon()",
+			"body":["svg.polygon()"],
+			"description":"polygon()"},
+		
+		"polyline() brython":{
+			"prefix":"svg.polyline()",
+			"body":["svg.polyline()"],
+			"description":"polyline()"},
+		
+		"radialGradient() brython":{
+			"prefix":"svg.radialgradient()",
+			"body":["svg.radialGradient()"],
+			"description":"radialGradient()"},
+		
+		"rect() brython":{
+			"prefix":"svg.rect()",
+			"body":["svg.rect()"],
+			"description":"rect()"},
+		
+		"stop() brython":{
+			"prefix":"svg.stop()",
+			"body":["svg.stop()"],
+			"description":"stop()"},
+		
+		"svg() brython":{
+			"prefix":"svg.svg()",
+			"body":["svg.svg()"],
+			"description":"svg()"},
+		
+		"text() brython":{
+			"prefix":"svg.text()",
+			"body":["svg.text()"],
+			"description":"text()"},
+		
+		"tref() brython":{
+			"prefix":"svg.tref()",
+			"body":["svg.tref()"],
+			"description":"tref()"},
+		
+		"tspan() brython":{
+			"prefix":"svg.tspan()",
+			"body":["svg.tspan()"],
+			"description":"tspan()"},
+		
+		"use() brython":{
+			"prefix":"svg.use()",
+			"body":["svg.use()"],
+			"description":"use()"},
+	
+	
+	
+			"localStorage  brython":{
+				"prefix":"window.localstorage.setitem",
+				"body":["localStorage.setItem('key', 'value')"],
+				"description":"localStorage.setItem('key', 'value')"},
+	
+				"getStorage  brython":{
+					"prefix":"window.localstorage.getitem",
+					"body":["localStorage.getItem('key')"],
+					"description":"localStorage.getItem('key')"},
+			
+					"removeitem  brython":{
+						"prefix":"window.localstorage.removeitem",
+						"body":["localStorage.removeItem('key')"],
+						"description":"localStorage.removeItem('key')"}									
+										
+								
+															
+											
+												
+	
+																				
+																				
+																			
+																
+									
+							
+					
+						
+	
+						
+						
+							
+						
+						
+				
+	
+	
+	
+				
+														
+														
+								
+							
+							
+										
+	
+	
+	
+						
+										
+								
+	
+	
+							
+									
+	
+																
+												
+										
+										
+					
+											
+									
+				
+								
+			
+	
+	
+					
+				
+	
+	
+			
+	
+	
+	
+	}
